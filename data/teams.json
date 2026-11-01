@@ -437,11 +437,11 @@
      {
       "pos": 1,
       "team": "Wishaw Wycombe Wanderers (2013)",
-      "p": 3,
-      "w": 3,
+      "p": 4,
+      "w": 4,
       "d": 0,
       "l": 0,
-      "pts": 9
+      "pts": 12
      },
      {
       "pos": 2,
@@ -482,10 +482,10 @@
      {
       "pos": 6,
       "team": "Moorlands F C (2013)",
-      "p": 4,
+      "p": 5,
       "w": 1,
       "d": 1,
-      "l": 2,
+      "l": 3,
       "pts": 4
      },
      {
@@ -499,6 +499,15 @@
      },
      {
       "pos": 8,
+      "team": "Motherwell FC Community Trust (2013)",
+      "p": 2,
+      "w": 1,
+      "d": 0,
+      "l": 1,
+      "pts": 3
+     },
+     {
+      "pos": 9,
       "team": "Eddlewood FC (2013)",
       "p": 2,
       "w": 0,
@@ -507,7 +516,7 @@
       "pts": 1
      },
      {
-      "pos": 9,
+      "pos": 10,
       "team": "Claremont AFC 2013 Blue",
       "p": 3,
       "w": 0,
@@ -516,26 +525,17 @@
       "pts": 1
      },
      {
-      "pos": 10,
-      "team": "W Academy Bills 2013",
-      "p": 1,
-      "w": 0,
-      "d": 0,
-      "l": 1,
-      "pts": 0
-     },
-     {
       "pos": 11,
-      "team": "Motherwell FC Community Trust (2013)",
-      "p": 1,
+      "team": "Motherwell Phoenix FC White (2013)",
+      "p": 2,
       "w": 0,
       "d": 0,
-      "l": 1,
+      "l": 2,
       "pts": 0
      },
      {
       "pos": 12,
-      "team": "Motherwell Phoenix FC White (2013)",
+      "team": "W Academy Bills 2013",
       "p": 2,
       "w": 0,
       "d": 0,
@@ -645,10 +645,10 @@
      {
       "pos": 5,
       "team": "Burnbank FC (2013)",
-      "p": 2,
+      "p": 3,
       "w": 1,
       "d": 1,
-      "l": 0,
+      "l": 1,
       "pts": 4
      },
      {
@@ -671,6 +671,15 @@
      },
      {
       "pos": 8,
+      "team": "Eddlewood FC reds (2013)",
+      "p": 2,
+      "w": 1,
+      "d": 0,
+      "l": 1,
+      "pts": 3
+     },
+     {
+      "pos": 9,
       "team": "Blantyre Victoria Y F C Black 2013",
       "p": 3,
       "w": 1,
@@ -679,7 +688,7 @@
       "pts": 3
      },
      {
-      "pos": 9,
+      "pos": 10,
       "team": "Clyde FC Community (Cambuslang) (2013s) White",
       "p": 3,
       "w": 0,
@@ -688,22 +697,13 @@
       "pts": 1
      },
      {
-      "pos": 10,
+      "pos": 11,
       "team": "Royal Albert FC (2013)",
       "p": 4,
       "w": 0,
       "d": 1,
       "l": 3,
       "pts": 1
-     },
-     {
-      "pos": 11,
-      "team": "Eddlewood FC reds (2013)",
-      "p": 1,
-      "w": 0,
-      "d": 0,
-      "l": 1,
-      "pts": 0
      }
     ],
     "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1201",
@@ -740,16 +740,6 @@
    ],
    "fixtures": [
     {
-     "date": "2026-10-31",
-     "time": null,
-     "kickoff": "2026-10-31T12:00:00+00:00",
-     "home": "16s - Wishaw Wycombe Yellow",
-     "away": "16s - Eddlewood Blacks",
-     "competition": "2016 High Intermediate",
-     "venue": "Wishaw Sports Centre Astro",
-     "url": "https://clyfa.leaguerepublic.com/match/45560760.html"
-    },
-    {
      "date": "2026-11-07",
      "time": "10:00",
      "kickoff": "2026-11-07T10:00:00+00:00",
@@ -777,16 +767,6 @@
     }
    ],
    "fixtures": [
-    {
-     "date": "2026-10-31",
-     "time": "10:00",
-     "kickoff": "2026-10-31T10:00:00+00:00",
-     "home": "16s - Eddlewood Reds",
-     "away": "16s - Cambusnethan Talbot White",
-     "competition": "2016 High Intermediate",
-     "venue": "7s - Jock Stein Pitch 2",
-     "url": "https://clyfa.leaguerepublic.com/match/45560762.html"
-    },
     {
      "date": "2026-11-07",
      "time": null,
@@ -840,7 +820,7 @@
    "scores_published": false
   }
  },
- "checked_at": "2026-10-31T20:17:58+00:00",
- "updated_at": "2026-10-31T20:11:33+00:00",
+ "checked_at": "2026-11-01T21:48:39+00:00",
+ "updated_at": "2026-11-01T21:48:39+00:00",
  "warnings": []
 }
