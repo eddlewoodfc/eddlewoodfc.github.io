@@ -420,20 +420,28 @@ def facebook_follow(t):
             f'aria-label="{e(aria)}" title="{e(name or label)}">{icon}{visible}</a></div>{caption}')
 
 
-def instagram_follow():
-    """First-team Instagram button. An empty X slot in club social is ignored."""
-    ig = next((s for s in shown_social() if s.get("name") == "Instagram"), None)
-    if not ig:
+def social_button(network, label):
+    """A follow button for one shown social account. Accounts with no URL are skipped."""
+    account = next((s for s in shown_social() if s.get("name") == network), None)
+    if not account:
         return ""
-    icon = ICON["Instagram"].replace("<svg", '<svg fill="#fff"', 1)
-    label = "Follow the first team on Instagram"
-    return (f'<div style="margin-top:18px"><a class="btn btn-red" href="{e(ig["url"])}" target="_blank" rel="noopener" '
-            f'aria-label="{e(label)} ({e(ig["label"])})" title="{e(ig["label"])}">{icon}{e(label)}</a></div>'
-            f'<p>{e(ig["label"])}</p>')
+    icon = ICON[network].replace("<svg", '<svg fill="#fff"', 1)
+    handle = str(account.get("label") or "").strip()
+    aria = f"{label} ({handle})" if handle else label
+    caption = f'<p>{e(handle)}</p>' if handle else ""
+    return (f'<div><a class="btn btn-red" href="{e(account["url"])}" target="_blank" rel="noopener" '
+            f'aria-label="{e(aria)}" title="{e(handle or label)}">{icon}{e(label)}</a>{caption}</div>')
+
+
+def first_team_social():
+    buttons = social_button("Instagram", "Follow the first team on Instagram") + social_button("X", "Follow on X")
+    if not buttons:
+        return ""
+    return f'<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:flex-start">{buttons}</div>'
 
 
 first_team = f"""
-<section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/warmup_wide.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Senior men · {e(C['season'])}</div><h1>First Team</h1><p>{e(senior[0]['summary'])}</p>{facebook_follow(senior[0])}{instagram_follow()}</div></section>
+<section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/warmup_wide.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Senior men · {e(C['season'])}</div><h1>First Team</h1><p>{e(senior[0]['summary'])}</p>{facebook_follow(senior[0])}{first_team_social()}</div></section>
 <section class="bg-grey"><div class="wrap">
  <div class="mc-grid">
   <div class="card card-dark next" data-next><div class="card-body"><div class="empty" style="color:#999;border-color:#333">Loading next match…</div></div></div>
