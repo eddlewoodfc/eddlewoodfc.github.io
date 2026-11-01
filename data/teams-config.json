@@ -31,7 +31,9 @@
    "facebook": {"name": "Eddlewood boys club 2017", "url": "https://www.facebook.com/profile.php?id=61564997840907"},
    "sides": [{"id": "2017", "name": "2017s", "label": "17s - Eddlewood FC", "year": "17s", "variant": null,
               "clyfa_ss": {"team_id": "764576502"}}]},
-  {"slug": "2020", "title": "2020s", "eyebrow": "Youth · born 2020", "group": "youth", "sides": []},
+  {"slug": "2020", "title": "2020s", "eyebrow": "Youth · born 2020", "group": "youth",
+   "facebook": {"name": "Eddlewood 2020's", "url": "https://www.facebook.com/profile.php?id=61568305648472"},
+   "sides": []},
   {"slug": "girls", "title": "Girls", "eyebrow": "Girls · born 2016/2017 · U8–U10", "group": "girls", "sides": []}
  ]
 }
