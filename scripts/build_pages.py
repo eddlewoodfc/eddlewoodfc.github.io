@@ -169,8 +169,33 @@ def team_sponsor_items(team_id):
         name, logo = (s.get("name") or "").strip(), (s.get("logo") or "").strip()
         url = (s.get("url") or "").strip()
         if name or logo:
-            out.append({"name": name, "logo": logo, "url": url, "tile": s.get("tile") or "light"})
+            out.append({"name": name, "logo": logo, "url": url, "note": (s.get("note") or "").strip(),
+                        "tile": s.get("tile") or "light"})
     return out
+
+
+def sponsor_listing_label(items):
+    """One line for a team on the sponsors lists. A shared note (kit sponsors) leads the names."""
+    named = [s for s in items if s.get("name")]
+    names = ", ".join(s["name"] for s in named)
+    notes = {s.get("note") for s in named if s.get("note")}
+    if len(notes) == 1 and all(s.get("note") for s in named):
+        note = next(iter(notes))
+        return f"{note} · {names}" if len(named) > 1 else f"{names} · {note}"
+    return names
+
+
+def youth_sponsor_listing():
+    cards = []
+    for t in TEAMS:
+        if t["group"] == "senior":
+            continue
+        for u in youth_sponsor_units(t):
+            items = [s for s in team_sponsor_items(u["id"]) if s.get("name")]
+            if not items:
+                continue
+            cards.append(f'<a class="link-card" href="{u["page"]}"><b>{tt(u["name"])}</b><span>{e(sponsor_listing_label(items))}</span></a>')
+    return "".join(cards)
 
 
 def sponsor_mailto(team_name):
@@ -245,6 +270,8 @@ home = f"""
 <section class="bg-grey"><div class="wrap">
  <div class="sec-head"><div><div class="eyebrow">Thank you</div><h2>First team sponsors</h2></div><a class="more" href="sponsors.html">All sponsors</a></div>
  <div class="spons-strip">{''.join(sponsor_tile(s) for s in C['sponsors'] if s.get('logo'))[:100000]}</div>
+ <div class="sec-head" style="margin-top:40px"><div><div class="eyebrow">Youth &amp; girls</div><h2>Team sponsors</h2></div><a class="more" href="sponsors.html">All sponsors</a></div>
+ <div class="link-grid">{youth_sponsor_listing()}</div>
 </div></section>
 """
 
@@ -309,8 +336,8 @@ squad = f"""
 # ----------------------------------------------------------------- SPONSORS
 player_sp = sorted([p for p in C["squad"] if p.get("sponsor")], key=lambda p: p["name"].split()[-1])
 def youth_sponsor_card(unit):
-    names = [s["name"] for s in team_sponsor_items(unit["id"]) if s.get("name")]
-    detail = ", ".join(e(n) for n in names) if names else "Sponsor wanted — get in touch"
+    items = [s for s in team_sponsor_items(unit["id"]) if s.get("name")]
+    detail = e(sponsor_listing_label(items)) if items else "Sponsor wanted — get in touch"
     return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>{detail}</span></a>'
 
 
@@ -502,14 +529,18 @@ def team_sponsors_section(t):
         if logos:
             shown += f'<div class="spons-strip">{"".join(sponsor_tile(s) for s in logos)}</div>'
         if texts:
+            shared = len(texts) > 1 and all(s.get("note") and s.get("note") == texts[0].get("note") for s in texts)
             cards = []
             for s in texts:
+                note = "" if shared or not s.get("note") else f'<p>{e(s["note"])}</p>'
+                inner = f'<h3>{e(s["name"])}</h3>{note}'
                 url = str(s.get("url") or "").strip()
                 if url:
-                    cards.append(f'<a class="info-card" href="{e(url)}" target="_blank" rel="noopener sponsored"><h3>{e(s["name"])}</h3></a>')
+                    cards.append(f'<a class="info-card" href="{e(url)}" target="_blank" rel="noopener sponsored">{inner}</a>')
                 else:
-                    cards.append(f'<div class="info-card"><h3>{e(s["name"])}</h3></div>')
-            shown += '<div class="link-grid">' + "".join(cards) + "</div>"
+                    cards.append(f'<div class="info-card">{inner}</div>')
+            label = f'<p class="eyebrow" style="margin-bottom:10px">{e(texts[0]["note"])}</p>' if shared else ""
+            shown += label + '<div class="link-grid">' + "".join(cards) + "</div>"
         become = f'<p style="margin-top:12px"><a class="more-link" href="{sponsor_mailto(u["name"])}">Become a sponsor</a></p>'
         blocks.append(f'<div>{head}{shown}{become}</div>')
     if empty and not filled:

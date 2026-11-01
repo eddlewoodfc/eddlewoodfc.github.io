@@ -1,13 +1,16 @@
 {
  "_comment": "Sponsors for each youth and girls team. The key is the side id, or the team slug when a team has no sides. Each value is a list of {name, logo, url}. Leave logo empty for a text card. Leave url empty for no link. An empty list shows the sponsor-wanted placeholder.",
- "2010": [],
- "2011": [],
+ "2010": [{"name": "Procast", "logo": "assets/img/sponsors/procast.svg", "url": "https://www.pro-cast.co.uk", "tile": "dark"}],
+ "2011": [
+  {"name": "Scullion LAW", "logo": "", "url": "https://www.facebook.com/ScullionLAW", "note": "Kit sponsors"},
+  {"name": "Scullion LIVING", "logo": "", "url": "https://www.facebook.com/scullionliving", "note": "Kit sponsors"}
+ ],
  "2012": [{"name": "Lightbody and Ferguson Decorating", "logo": "", "url": ""}],
  "2013": [],
  "2013-reds": [],
  "2016-blacks": [],
  "2016-reds": [],
- "2017": [],
+ "2017": [{"name": "Mandy's Lucky Number", "logo": "", "url": "https://www.facebook.com/groups/2520277664871978", "note": "Charity page"}],
  "2020": [],
  "girls": []
 }
