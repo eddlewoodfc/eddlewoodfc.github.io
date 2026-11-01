@@ -392,8 +392,26 @@ teams_index = f"""
 <section class="bg-grey"><div class="wrap">{JOIN}</div></section>
 """
 
+
+def facebook_follow(t):
+    """Prominent follow button when a team has its own Facebook page in the config."""
+    fb = t.get("facebook") or {}
+    if isinstance(fb, str):
+        fb = {"url": fb}
+    url = str(fb.get("url") or "").strip()
+    if not url:
+        return ""
+    name = str(fb.get("name") or "").strip()
+    label = f"Follow the {t['title']} on Facebook"
+    aria = f"{label} ({name})" if name else label
+    icon = ICON["Facebook"].replace("<svg", '<svg fill="#fff"', 1)
+    caption = f'<p>{e(name)}</p>' if name else ""
+    return (f'<div style="margin-top:18px"><a class="btn btn-red" href="{e(url)}" target="_blank" rel="noopener" '
+            f'aria-label="{e(aria)}" title="{e(name or label)}">{icon}Follow the {tt(t["title"])} on Facebook</a></div>{caption}')
+
+
 first_team = f"""
-<section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/warmup_wide.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Senior men · {e(C['season'])}</div><h1>First Team</h1><p>{e(senior[0]['summary'])}</p></div></section>
+<section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/warmup_wide.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Senior men · {e(C['season'])}</div><h1>First Team</h1><p>{e(senior[0]['summary'])}</p>{facebook_follow(senior[0])}</div></section>
 <section class="bg-grey"><div class="wrap">
  <div class="mc-grid">
   <div class="card card-dark next" data-next><div class="card-body"><div class="empty" style="color:#999;border-color:#333">Loading next match…</div></div></div>
@@ -469,7 +487,7 @@ def youth_page(t):
 <a class="btn btn-red" href="mailto:{EMAIL}?subject={e(t['title'])}%20enquiry">Email the club</a></div>"""
         intro = ""
     return f"""
-<section class="page-hero" style="padding:0"><div class="wrap"><div class="eyebrow" style="color:#ff98a6">{e(t['eyebrow'])}</div><h1>{tt(t['title'])}</h1><p>{e(t.get('format') or 'Eddlewood FC')}{' · ' + str(len(sides)) + ' teams' if len(sides) > 1 else ''} · Season {e(C['season'])}</p></div></section>
+<section class="page-hero" style="padding:0"><div class="wrap"><div class="eyebrow" style="color:#ff98a6">{e(t['eyebrow'])}</div><h1>{tt(t['title'])}</h1><p>{e(t.get('format') or 'Eddlewood FC')}{' · ' + str(len(sides)) + ' teams' if len(sides) > 1 else ''} · Season {e(C['season'])}</p>{facebook_follow(t)}</div></section>
 <section><div class="wrap">{intro}{body}
  {'<p class="updated" data-yt-updated></p>' if sides else ''}
 </div></section>
