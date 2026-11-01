@@ -74,8 +74,13 @@ def nav_key(fname):
     return fname
 
 
+def shown_social():
+    """Social accounts with a URL. Empty slots (for example X, until the club has one) stay in the data and are not linked."""
+    return [s for s in C["social"] if str(s.get("url") or "").strip()]
+
+
 def social_links(cls=""):
-    return "".join(f'<a href="{s["url"]}" target="_blank" rel="noopener" aria-label="{s["name"]}: {e(s["label"])}" class="{cls}">{ICON[s["name"]]}{"<span>" + e(s["label"]) + "</span>" if cls else ""}</a>' for s in C["social"])
+    return "".join(f'<a href="{s["url"]}" target="_blank" rel="noopener" aria-label="{s["name"]}: {e(s["label"])}" class="{cls}">{ICON[s["name"]]}{"<span>" + e(s["label"]) + "</span>" if cls else ""}</a>' for s in shown_social())
 
 
 def page(fname, title, body, desc, hero_img=None):
@@ -123,7 +128,7 @@ def footer():
  <p style="margin-top:16px;max-width:360px">{e(C['ground']['name'])}, {e(C['ground']['address'])}</p></div>
  <div><h4>Teams</h4><ul>{''.join(f'<li><a href="{team_page(t)}">{e(t["title"])}</a></li>' for t in TEAMS)}</ul></div>
  <div><h4>Club</h4><ul><li><a href="fixtures.html">Fixtures &amp; results</a></li><li><a href="table.html">League table</a></li><li><a href="squad.html">First-team squad</a></li><li><a href="sponsors.html">Sponsors</a></li><li><a href="visit.html">Matchday</a></li><li><a href="contact.html">Contact</a></li></ul></div>
- <div><h4>Follow</h4><ul>{''.join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{s["name"]} · {e(s["label"])}</a></li>' for s in C['social'])}</ul></div>
+ <div><h4>Follow</h4><ul>{''.join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{s["name"]} · {e(s["label"])}</a></li>' for s in shown_social())}</ul></div>
 </div>
 <div class="f-legal"><span>{e(C['charity'])}</span><span>Fixtures, results and tables update automatically from the West of Scotland Football League, CLYFA and Scottish Youth FA websites.</span><span>© <span id="yr">2026</span> Eddlewood FC</span></div>
 </div></footer>"""
@@ -329,9 +334,9 @@ visit = f"""
 <section><div class="wrap">
  <div class="info-grid">
   <div class="info-card"><h3>Getting here &amp; parking</h3><p class="big">{e(g['name'])}</p><p>{e(g['address'])}</p>
-   <p>{e("There is parking at the ground for around 30–40 cars. On matchdays a further small car park on the other side of the park can also be used — it's a short walk to the ground.")}</p>
+   <p>{e("Ground car park: on Queens Drive beside the pitch, room for around 30–40 cars. Matchday overflow parking: the car park off Devonhill Avenue on the west side of Eddlewood Park, about a 3-minute walk across the park to the ground.")}</p>
    <p>{e("Hamilton is well served by bus and rail; use the directions link to plan your journey.")}</p>
-   <p><a class="btn btn-red" href="{g['map']}" target="_blank" rel="noopener">{ICON['pin'].replace('<svg', '<svg fill="#fff"')} Get directions</a></p></div>
+   <p style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-red" href="{g['map']}" target="_blank" rel="noopener">{ICON['pin'].replace('<svg', '<svg fill="#fff"')} Get directions</a><a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Devonhill+Avenue%2C+Hamilton" target="_blank" rel="noopener">{ICON['pin'].replace('<svg', '<svg fill="#fff"')} Directions to overflow parking</a></p></div>
   <div class="info-card"><h3>Admission</h3>
    <table class="lt" style="margin-top:4px"><tbody>{''.join(f'<tr><td class="tm">{e(a[0])}{"<br><small style=color:var(--mute)>" + e(a[2]) + "</small>" if len(a) > 2 else ""}</td><td class="pts" style="text-align:right;font-size:20px">{e(a[1])}</td></tr>' for a in C['admission'])}</tbody></table>
   </div>
@@ -354,7 +359,7 @@ contact = f"""
   <a class="contact-row" href="{g['map']}" target="_blank" rel="noopener"><div class="ic">{ICON['pin']}</div><div><small>Ground</small><b>{e(g['name'])}, {e(g['address'])}</b></div></a>
  </div>
  <div class="info-card"><h3>Follow the club</h3>
-  {''.join(f'<a class="contact-row" href="{s["url"]}" target="_blank" rel="noopener"><div class="ic">{ICON[s["name"]]}</div><div><small>{s["name"]}</small><b>{e(s["label"])}</b></div></a>' for s in C['social'])}
+  {''.join(f'<a class="contact-row" href="{s["url"]}" target="_blank" rel="noopener"><div class="ic">{ICON[s["name"]]}</div><div><small>{s["name"]}</small><b>{e(s["label"])}</b></div></a>' for s in shown_social())}
  </div>
 </div>
 <div style="margin-top:28px">{SPONSOR_CTA}</div>
@@ -415,8 +420,20 @@ def facebook_follow(t):
             f'aria-label="{e(aria)}" title="{e(name or label)}">{icon}{visible}</a></div>{caption}')
 
 
+def instagram_follow():
+    """First-team Instagram button. An empty X slot in club social is ignored."""
+    ig = next((s for s in shown_social() if s.get("name") == "Instagram"), None)
+    if not ig:
+        return ""
+    icon = ICON["Instagram"].replace("<svg", '<svg fill="#fff"', 1)
+    label = "Follow the first team on Instagram"
+    return (f'<div style="margin-top:18px"><a class="btn btn-red" href="{e(ig["url"])}" target="_blank" rel="noopener" '
+            f'aria-label="{e(label)} ({e(ig["label"])})" title="{e(ig["label"])}">{icon}{e(label)}</a></div>'
+            f'<p>{e(ig["label"])}</p>')
+
+
 first_team = f"""
-<section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/warmup_wide.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Senior men · {e(C['season'])}</div><h1>First Team</h1><p>{e(senior[0]['summary'])}</p>{facebook_follow(senior[0])}</div></section>
+<section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/warmup_wide.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Senior men · {e(C['season'])}</div><h1>First Team</h1><p>{e(senior[0]['summary'])}</p>{facebook_follow(senior[0])}{instagram_follow()}</div></section>
 <section class="bg-grey"><div class="wrap">
  <div class="mc-grid">
   <div class="card card-dark next" data-next><div class="card-body"><div class="empty" style="color:#999;border-color:#333">Loading next match…</div></div></div>
