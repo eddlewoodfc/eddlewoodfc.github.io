@@ -134,10 +134,22 @@ def footer():
 </div></footer>"""
 
 
-def sponsor_tile(s):
-    cls = "sp" + (" dark" if s.get("tile") == "dark" else "") + (" cap" if s.get("caption") else "")
+def sponsor_img(s):
+    """Logo markup. An SVG can fall back to a PNG when that file is present. Artwork is not altered."""
+    alt = e(s.get("name") or "")
+    logo = s["logo"]
+    fallback = str(s.get("logo_fallback") or "").strip()
+    if fallback and (ROOT / fallback).is_file():
+        return (f'<picture><source srcset="{e(logo)}" type="image/svg+xml">'
+                f'<img src="{e(fallback)}" alt="{alt}" loading="lazy"></picture>')
+    return f'<img src="{e(logo)}" alt="{alt}" loading="lazy">'
+
+
+def sponsor_tile(s, force_white=False):
+    tile = "light" if force_white else s.get("tile")
+    cls = "sp" + (" dark" if tile == "dark" and not force_white else "") + (" cap" if s.get("caption") else "")
     if s.get("logo"):
-        inner = f'<img src="{s["logo"]}" alt="{e(s["name"])}" loading="lazy">' + (f'<span>{e(s["name"])}</span>' if s.get("caption") else "")
+        inner = sponsor_img(s) + (f'<span>{e(s["name"])}</span>' if s.get("caption") else "")
     else:
         inner = f'<span class="txt">{e(s["name"])}</span>'
     url = str(s.get("url") or "").strip()
@@ -167,9 +179,12 @@ def team_sponsor_items(team_id):
         if not isinstance(s, dict):
             continue
         name, logo = (s.get("name") or "").strip(), (s.get("logo") or "").strip()
+        if logo and not (ROOT / logo).is_file():
+            logo = ""
         url = (s.get("url") or "").strip()
         if name or logo:
-            out.append({"name": name, "logo": logo, "url": url, "note": (s.get("note") or "").strip(),
+            out.append({"name": name, "logo": logo, "logo_fallback": (s.get("logo_fallback") or "").strip(),
+                        "url": url, "note": (s.get("note") or "").strip(),
                         "tile": s.get("tile") or "light"})
     return out
 
@@ -336,9 +351,14 @@ squad = f"""
 # ----------------------------------------------------------------- SPONSORS
 player_sp = sorted([p for p in C["squad"] if p.get("sponsor")], key=lambda p: p["name"].split()[-1])
 def youth_sponsor_card(unit):
-    items = [s for s in team_sponsor_items(unit["id"]) if s.get("name")]
-    detail = e(sponsor_listing_label(items)) if items else "Sponsor wanted — get in touch"
-    return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>{detail}</span></a>'
+    items = [s for s in team_sponsor_items(unit["id"]) if s.get("name") or s.get("logo")]
+    if not items:
+        return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>Sponsor wanted — get in touch</span></a>'
+    logos = [s for s in items if s.get("logo")]
+    if logos:
+        tiles = "".join(sponsor_tile(s) for s in logos)
+        return f'<div class="youth-sp-block"><a class="more-link" href="{unit["page"]}">{tt(unit["name"])}</a><div class="spons-strip youth">{tiles}</div></div>'
+    return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>{e(sponsor_listing_label(items))}</span></a>'
 
 
 youth_units = [u for t in TEAMS if t["group"] != "senior" for u in youth_sponsor_units(t)]
@@ -527,7 +547,9 @@ def team_sponsors_section(t):
         texts = [s for s in items if s.get("name") and not s.get("logo")]
         shown = ""
         if logos:
-            shown += f'<div class="spons-strip">{"".join(sponsor_tile(s) for s in logos)}</div>'
+            shared = len(logos) > 1 and all(s.get("note") and s.get("note") == logos[0].get("note") for s in logos)
+            label = f'<p class="eyebrow" style="margin-bottom:10px">{e(logos[0]["note"])}</p>' if shared else ""
+            shown += label + f'<div class="spons-strip youth">{"".join(sponsor_tile(s) for s in logos)}</div>'
         if texts:
             shared = len(texts) > 1 and all(s.get("note") and s.get("note") == texts[0].get("note") for s in texts)
             cards = []
