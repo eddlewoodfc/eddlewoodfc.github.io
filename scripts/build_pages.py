@@ -328,7 +328,10 @@ visit = f"""
 <section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/walkout_mascots.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Visit us</div><h1>Matchday</h1><p>Everything you need for a matchday at {e(g['name'])}.</p></div></section>
 <section><div class="wrap">
  <div class="info-grid">
-  <div class="info-card"><h3>Getting here</h3><p class="big">{e(g['name'])}</p><p>{e(g['address'])}</p><p><a class="btn btn-red" href="{g['map']}" target="_blank" rel="noopener">{ICON['pin'].replace('<svg', '<svg fill="#fff"')} Open in Maps</a></p></div>
+  <div class="info-card"><h3>Getting here &amp; parking</h3><p class="big">{e(g['name'])}</p><p>{e(g['address'])}</p>
+   <p>{e("There is parking at the ground for around 30–40 cars. On matchdays a further small car park on the other side of the park can also be used — it's a short walk to the ground.")}</p>
+   <p>{e("Hamilton is well served by bus and rail; use the directions link to plan your journey.")}</p>
+   <p><a class="btn btn-red" href="{g['map']}" target="_blank" rel="noopener">{ICON['pin'].replace('<svg', '<svg fill="#fff"')} Get directions</a></p></div>
   <div class="info-card"><h3>Admission</h3>
    <table class="lt" style="margin-top:4px"><tbody>{''.join(f'<tr><td class="tm">{e(a[0])}{"<br><small style=color:var(--mute)>" + e(a[2]) + "</small>" if len(a) > 2 else ""}</td><td class="pts" style="text-align:right;font-size:20px">{e(a[1])}</td></tr>' for a in C['admission'])}</tbody></table>
   </div>
