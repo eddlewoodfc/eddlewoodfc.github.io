@@ -438,9 +438,11 @@ def side_block(t, sd):
     srcs = "".join(f'<li><a href="{e(x["url"])}" target="_blank" rel="noopener">{e(x["name"])}</a></li>' for x in side_sources(sd))
     multi = len(t["sides"]) > 1
     head = f'<div class="sec-head"><div><div class="eyebrow">{e(t["format"] or "")}</div><h2>{tt(sd["name"])}</h2></div></div>' if multi else ""
+    # A page-level Facebook link covers every side, so each side shown on its own gets the button.
+    shared_fb = facebook_follow(t) if multi and t.get("facebook") else ""
     table = "" if ss else f"""<div class="card"><div class="card-head"><span data-yt-division="{sd['id']}">League table</span><span class="tag">{e(C['season'])}</span></div><div style="padding:6px 12px" data-yt-table="{sd['id']}"><div class="empty">Loading table…</div></div></div>"""
     ssnote = ""
-    return f"""<div class="side-block">{head}
+    return f"""<div class="side-block">{head}{shared_fb}
  <div class="two-col">
   <div>
    <h3 class="sub">Fixtures</h3><div class="fx-mini" data-yt-fixtures="{sd['id']}"><div class="empty">Loading fixtures…</div></div>
@@ -489,7 +491,7 @@ def youth_page(t):
 <a class="btn btn-red" href="mailto:{EMAIL}?subject={e(t['title'])}%20enquiry">Email the club</a></div>"""
         intro = ""
     return f"""
-<section class="page-hero" style="padding:0"><div class="wrap"><div class="eyebrow" style="color:#ff98a6">{e(t['eyebrow'])}</div><h1>{tt(t['title'])}</h1><p>{e(t.get('format') or 'Eddlewood FC')}{' · ' + str(len(sides)) + ' teams' if len(sides) > 1 else ''} · Season {e(C['season'])}</p>{facebook_follow(t)}</div></section>
+<section class="page-hero" style="padding:0"><div class="wrap"><div class="eyebrow" style="color:#ff98a6">{e(t['eyebrow'])}</div><h1>{tt(t['title'])}</h1><p>{e(t.get('format') or 'Eddlewood FC')}{' · ' + str(len(sides)) + ' teams' if len(sides) > 1 else ''} · Season {e(C['season'])}</p>{'' if len(sides) > 1 and t.get('facebook') else facebook_follow(t)}</div></section>
 <section><div class="wrap">{intro}{body}
  {'<p class="updated" data-yt-updated></p>' if sides else ''}
 </div></section>

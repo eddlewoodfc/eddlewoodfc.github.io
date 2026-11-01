@@ -1,5 +1,5 @@
 {
- "_comment": "Club teams, in display order. 'sides' are the individual Eddlewood teams entered in competitions; each side lists where its fixtures/results/tables are published. Optional 'facebook' is {url, name} for a team's page, or a facebook.com/groups URL which is shown as 'Join the … Facebook group'. Used by scripts/update_youth.py (live data) and scripts/build_pages.py (pages). Edit this file to add/rename a team, then run build_pages.py.",
+ "_comment": "Club teams, in display order. 'sides' are the individual Eddlewood teams entered in competitions; each side lists where its fixtures/results/tables are published. Optional 'facebook' is {url, name} for a team's page, or a facebook.com/groups URL which is shown as 'Join the … Facebook group'. On a team with more than one side, that button is shown for every side. Used by scripts/update_youth.py (live data) and scripts/build_pages.py (pages). Edit this file to add/rename a team, then run build_pages.py.",
  "teams": [
   {"slug": "first-team", "title": "First Team", "eyebrow": "Senior men", "group": "senior", "page": "first-team.html",
    "summary": "West of Scotland Football League, Fourth Division. Home games at Eddlewood Park."},
