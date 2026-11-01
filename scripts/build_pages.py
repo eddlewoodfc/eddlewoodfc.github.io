@@ -135,11 +135,15 @@ def footer():
 
 
 def sponsor_tile(s):
-    cls = "sp" + (" dark" if s["tile"] == "dark" else "") + (" cap" if s.get("caption") else "")
+    cls = "sp" + (" dark" if s.get("tile") == "dark" else "") + (" cap" if s.get("caption") else "")
     if s.get("logo"):
         inner = f'<img src="{s["logo"]}" alt="{e(s["name"])}" loading="lazy">' + (f'<span>{e(s["name"])}</span>' if s.get("caption") else "")
     else:
         inner = f'<span class="txt">{e(s["name"])}</span>'
+    url = str(s.get("url") or "").strip()
+    if url:
+        return (f'<a class="{cls}" href="{e(url)}" target="_blank" rel="noopener sponsored" '
+                f'title="{e(s["name"])}">{inner}</a>')
     return f'<div class="{cls}" title="{e(s["name"])}">{inner}</div>'
 
 
@@ -163,8 +167,9 @@ def team_sponsor_items(team_id):
         if not isinstance(s, dict):
             continue
         name, logo = (s.get("name") or "").strip(), (s.get("logo") or "").strip()
+        url = (s.get("url") or "").strip()
         if name or logo:
-            out.append({"name": name, "logo": logo, "tile": s.get("tile") or "light"})
+            out.append({"name": name, "logo": logo, "url": url, "tile": s.get("tile") or "light"})
     return out
 
 
@@ -497,7 +502,14 @@ def team_sponsors_section(t):
         if logos:
             shown += f'<div class="spons-strip">{"".join(sponsor_tile(s) for s in logos)}</div>'
         if texts:
-            shown += '<div class="link-grid">' + "".join(f'<div class="info-card"><h3>{e(s["name"])}</h3></div>' for s in texts) + "</div>"
+            cards = []
+            for s in texts:
+                url = str(s.get("url") or "").strip()
+                if url:
+                    cards.append(f'<a class="info-card" href="{e(url)}" target="_blank" rel="noopener sponsored"><h3>{e(s["name"])}</h3></a>')
+                else:
+                    cards.append(f'<div class="info-card"><h3>{e(s["name"])}</h3></div>')
+            shown += '<div class="link-grid">' + "".join(cards) + "</div>"
         become = f'<p style="margin-top:12px"><a class="more-link" href="{sponsor_mailto(u["name"])}">Become a sponsor</a></p>'
         blocks.append(f'<div>{head}{shown}{become}</div>')
     if empty and not filled:

@@ -158,108 +158,126 @@
  "sponsors": [
   {
    "name": "Procast Building Contractors",
+   "url": "https://pro-cast.co.uk/",
    "logo": "assets/img/sponsors/procast.svg",
    "tile": "dark",
    "caption": false
   },
   {
    "name": "Burton Roofing",
+   "url": "https://www.burtonroofing.co.uk/",
    "logo": "assets/img/sponsors/burton_roofing.png",
    "tile": "white",
    "caption": false
   },
   {
    "name": "HISA",
+   "url": "https://hisauk.com/",
    "logo": "assets/img/sponsors/hisa.png",
    "tile": "white",
    "caption": false
   },
   {
    "name": "POS Group",
+   "url": "https://www.posltd.net/",
    "logo": "assets/img/sponsors/pos_group.svg",
    "tile": "white",
    "caption": false
   },
   {
    "name": "Structherm",
+   "url": "https://www.structherm.co.uk/",
    "logo": "assets/img/sponsors/structherm.png",
    "tile": "white",
    "caption": false
   },
   {
    "name": "MPC Coatings",
+   "url": "https://www.mpccoatings.co.uk/",
    "logo": "assets/img/sponsors/mpc_coatings.png",
    "tile": "white",
    "caption": false
   },
   {
    "name": "DL Architectural",
+   "url": "https://dlarchitecturalconsultants.com/",
    "logo": "assets/img/sponsors/dl_architectural.svg",
    "tile": "dark",
    "caption": false
   },
   {
    "name": "Advance Vehicle Rental",
+   "url": "https://www.acscotland.com/companies/advance-vehicle-rental/",
    "logo": "assets/img/sponsors/advance_vehicle_rental.svg",
    "tile": "white",
    "caption": false
   },
   {
    "name": "Jewson",
+   "url": "https://www.jewson.co.uk/",
    "logo": "assets/img/sponsors/jewson.svg",
    "tile": "white",
    "caption": false
   },
   {
    "name": "Plumbstore",
+   "url": "https://www.plumbstores.co.uk/",
    "logo": "assets/img/sponsors/plumbstore.png",
    "tile": "white",
    "caption": false
   },
   {
    "name": "Alex Young Bakers",
+   "url": "https://www.facebook.com/107465404295959",
    "logo": "assets/img/sponsors/alex_young_bakers_v3.png",
    "tile": "white",
    "caption": false
   },
   {
    "name": "Cadzow Plumbing & Heating",
+   "url": "https://www.facebook.com/p/Cadzow-Plumbing-and-Heating-100064050694831/",
    "logo": null,
    "tile": "white",
    "caption": false
   },
   {
    "name": "Park's Motor Group",
+   "url": "https://www.parks.uk.com/",
    "logo": "assets/img/sponsors/parks_motor_group.png",
    "tile": "dark",
    "caption": false
   },
   {
    "name": "City Electrical Factors",
+   "url": "https://www.cef.co.uk/",
    "logo": "assets/img/sponsors/cef.svg",
    "tile": "white",
    "caption": false
   },
   {
    "name": "Graham Plumbers' Merchant",
+   "url": "https://www.grahamdirect.co.uk/",
    "logo": "assets/img/sponsors/graham.png",
    "tile": "white",
    "caption": false
   },
   {
    "name": "Shotokan Karate Hamilton",
+   "url": "https://hamiltonshotokan.co.uk/",
    "logo": "assets/img/sponsors/shotokan_karate_hamilton.jpg",
    "tile": "white",
    "caption": true
   },
   {
    "name": "Allan Campbell & Sons Roughcasting",
+   "url": "https://www.facebook.com/p/AllanCampbellSons-PlasteringRoughcasting-100083087744505/",
    "logo": "assets/img/sponsors/allan_campbell_sons.png",
    "tile": "white",
    "caption": false
   },
   {
    "name": "Cadzow Car Clinic",
+   "url": "https://cadzowcarclinic.co.uk/",
    "logo": "assets/img/sponsors/cadzow_car_clinic.png",
    "tile": "white",
    "caption": false
