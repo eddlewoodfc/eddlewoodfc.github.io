@@ -452,7 +452,7 @@ def team_sponsors_section(t):
     else:
         inner = f'<div class="link-grid">{"".join(blocks)}</div>'
     return f"""<div style="margin-top:28px">
- <div class="sec-head"><div><div class="eyebrow">Thank you</div><h2>Team sponsors</h2></div></div>
+ <div class="sec-head"><div><div class="eyebrow">Sponsor wanted</div><h2>Team sponsors</h2></div></div>
  {inner}
 </div>"""
 
