@@ -491,7 +491,15 @@ def team_sponsors_section(t):
     blocks = []
     for u, items in filled:
         head = f'<h3 class="sub">{tt(u["name"])}</h3>' if len(units) > 1 else ""
-        blocks.append(f'<div>{head}<div class="spons-strip">{"".join(sponsor_tile(s) for s in items)}</div></div>')
+        logos = [s for s in items if s.get("logo")]
+        texts = [s for s in items if s.get("name") and not s.get("logo")]
+        shown = ""
+        if logos:
+            shown += f'<div class="spons-strip">{"".join(sponsor_tile(s) for s in logos)}</div>'
+        if texts:
+            shown += '<div class="link-grid">' + "".join(f'<div class="info-card"><h3>{e(s["name"])}</h3></div>' for s in texts) + "</div>"
+        become = f'<p style="margin-top:12px"><a class="more-link" href="{sponsor_mailto(u["name"])}">Become a sponsor</a></p>'
+        blocks.append(f'<div>{head}{shown}{become}</div>')
     if empty and not filled:
         blocks.append(sponsor_placeholder(sponsor_display_name(t)))
     else:
@@ -501,8 +509,9 @@ def team_sponsors_section(t):
         inner = f'<div style="display:grid;gap:16px">{"".join(blocks)}</div>' if len(blocks) > 1 else "".join(blocks)
     else:
         inner = f'<div class="link-grid">{"".join(blocks)}</div>'
+    eyebrow = "Thank you" if filled else "Sponsor wanted"
     return f"""<div style="margin-top:28px">
- <div class="sec-head"><div><div class="eyebrow">Sponsor wanted</div><h2>Team sponsors</h2></div></div>
+ <div class="sec-head"><div><div class="eyebrow">{eyebrow}</div><h2>Team sponsors</h2></div></div>
  {inner}
 </div>"""
 
@@ -524,7 +533,31 @@ def join_panel(t):
             f'<a class="btn btn-dark" href="mailto:{EMAIL}?subject={subject}">Email the club</a></div>')
 
 
+def team_facts_note(t):
+    f = t.get("facts") or {}
+    parts = []
+    if f.get("training"):
+        parts.append(f"Training: {f['training']}")
+    if f.get("matches"):
+        parts.append(f"Matches: {f['matches']}")
+    if f.get("league"):
+        parts.append(f"League: {f['league']}")
+    if not parts:
+        return ""
+    return f'<p class="note-box">{e(". ".join(parts))}.</p>'
+
+
 def training_card(t):
+    f = t.get("facts") or {}
+    if f.get("training") or f.get("matches") or f.get("league"):
+        rows = []
+        if f.get("training"):
+            rows.append(f'<p>{e(f["training"])}</p>')
+        if f.get("matches"):
+            rows.append(f'<p><b>Matches</b> {e(f["matches"])}</p>')
+        if f.get("league"):
+            rows.append(f'<p><b>League</b> {e(f["league"])}</p>')
+        return f'<div class="info-card"><h3>Training</h3>{"".join(rows)}</div>'
     j = t.get("join") or {}
     if j.get("training") or j.get("venue"):
         bits = []
@@ -552,9 +585,12 @@ def youth_page(t):
     panel = join_panel(t)
     if panel:
         panel = f'<div style="margin-bottom:22px">{panel}</div>'
+    facts = team_facts_note(t)
+    if facts:
+        facts = f'<div style="margin-bottom:22px">{facts}</div>'
     return f"""
 <section class="page-hero" style="padding:0"><div class="wrap"><div class="eyebrow" style="color:#ff98a6">{e(t['eyebrow'])}</div><h1>{tt(t['title'])}</h1><p>{e(t.get('format') or 'Eddlewood FC')}{' · ' + str(len(sides)) + ' teams' if len(sides) > 1 else ''} · Season {e(C['season'])}</p>{'' if len(sides) > 1 and t.get('facebook') else facebook_follow(t)}</div></section>
-<section><div class="wrap">{panel}{intro}{body}
+<section><div class="wrap">{panel}{facts}{intro}{body}
  {'<p class="updated" data-yt-updated></p>' if sides else ''}
 </div></section>
 <section class="bg-grey"><div class="wrap">

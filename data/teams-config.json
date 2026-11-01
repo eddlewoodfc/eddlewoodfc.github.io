@@ -13,6 +13,7 @@
               "clyfa_table": {"feed": 1192}, "syfa_cup": true}]},
   {"slug": "2012", "title": "2012s", "eyebrow": "Youth · born 2012", "group": "youth", "format": "11-a-side",
    "facebook": {"name": "Eddlewood Boys Club 2012", "url": "https://www.facebook.com/Eddlewood2012/"},
+   "facts": {"training": "Monday & Thursday", "matches": "Saturday mornings", "league": "CLYFA A Division"},
    "sides": [{"id": "2012", "name": "2012s", "label": "Eddlewood FC (2012)", "year": "2012", "variant": null,
               "clyfa_table": {"feed": 1194}, "syfa_cup": true}]},
   {"slug": "2013", "title": "2013s", "eyebrow": "Youth · born 2013 · two teams", "group": "youth", "format": "11-a-side",
