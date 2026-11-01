@@ -34,6 +34,12 @@
   {"slug": "2020", "title": "2020s", "eyebrow": "Youth · born 2020", "group": "youth",
    "facebook": {"name": "Eddlewood 2020's", "url": "https://www.facebook.com/profile.php?id=61568305648472"},
    "sides": []},
-  {"slug": "girls", "title": "Girls", "eyebrow": "Girls · born 2016/2017 · U8–U10", "group": "girls", "sides": []}
+  {"slug": "girls", "title": "Girls", "eyebrow": "Girls · born 2016/2017 · U8–U10", "group": "girls",
+   "join": {"title": "Join Eddlewood Girls",
+            "text": "We are looking for Under 8s and Under 10s girls. All abilities welcome — learn, make friends, have fun and build confidence.",
+            "training": "Tuesday & Thursday",
+            "venue": "Five's Hamilton",
+            "email_subject": "Eddlewood Girls enquiry"},
+   "sides": []}
  ]
 }

@@ -479,6 +479,37 @@ def team_sponsors_section(t):
 </div>"""
 
 
+def join_panel(t):
+    """Recruitment panel from club-supplied facts. No phone numbers or coach names."""
+    j = t.get("join") or {}
+    if not (j.get("text") or j.get("training") or j.get("venue")):
+        return ""
+    subject = quote(j.get("email_subject") or f"{t['title']} enquiry")
+    facts = []
+    if j.get("training"):
+        facts.append(f'<div class="ps"><b>Training</b><span>{e(j["training"])}</span></div>')
+    if j.get("venue"):
+        facts.append(f'<div class="ps"><b>Venue</b><span>{e(j["venue"])}</span></div>')
+    fact_html = f'<div class="ps-list" style="margin-top:14px">{"".join(facts)}</div>' if facts else ""
+    title = j.get("title") or f"Join {t['title']}"
+    return (f'<div class="cta-band"><div><h3>{e(title)}</h3><p>{e(j.get("text") or "")}</p>{fact_html}</div>'
+            f'<a class="btn btn-dark" href="mailto:{EMAIL}?subject={subject}">Email the club</a></div>')
+
+
+def training_card(t):
+    j = t.get("join") or {}
+    if j.get("training") or j.get("venue"):
+        bits = []
+        if j.get("training"):
+            bits.append(f'<p><b>{e(j["training"])}</b></p>')
+        if j.get("venue"):
+            bits.append(f'<p>{e(j["venue"])}</p>')
+        body = "".join(bits)
+    else:
+        body = "<p>Training details coming soon.</p>"
+    return f'<div class="info-card"><h3>Training</h3>{body}</div>'
+
+
 def youth_page(t):
     sides = t.get("sides", [])
     if sides:
@@ -490,15 +521,18 @@ def youth_page(t):
         body = f"""<div class="empty-team"><h3>Fixtures coming soon</h3><p>We have not found a league that publishes fixtures or results for this team online yet. For match and training details, contact the club.</p>
 <a class="btn btn-red" href="mailto:{EMAIL}?subject={e(t['title'])}%20enquiry">Email the club</a></div>"""
         intro = ""
+    panel = join_panel(t)
+    if panel:
+        panel = f'<div style="margin-bottom:22px">{panel}</div>'
     return f"""
 <section class="page-hero" style="padding:0"><div class="wrap"><div class="eyebrow" style="color:#ff98a6">{e(t['eyebrow'])}</div><h1>{tt(t['title'])}</h1><p>{e(t.get('format') or 'Eddlewood FC')}{' · ' + str(len(sides)) + ' teams' if len(sides) > 1 else ''} · Season {e(C['season'])}</p>{'' if len(sides) > 1 and t.get('facebook') else facebook_follow(t)}</div></section>
-<section><div class="wrap">{intro}{body}
+<section><div class="wrap">{panel}{intro}{body}
  {'<p class="updated" data-yt-updated></p>' if sides else ''}
 </div></section>
 <section class="bg-grey"><div class="wrap">
  <div class="info-grid">
   <div class="info-card"><h3>Coaches</h3><p>Coach details coming soon.</p></div>
-  <div class="info-card"><h3>Training</h3><p>Training details coming soon.</p></div>
+  {training_card(t)}
  </div>
  {team_sponsors_section(t)}
  <div style="margin-top:22px">{JOIN}</div>
