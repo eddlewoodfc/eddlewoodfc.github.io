@@ -1,0 +1,13 @@
+{
+ "_comment": "Sponsors for each youth and girls team. The key is the side id, or the team slug when a team has no sides. Each value is a list of {name, logo}. An empty list shows the sponsor-wanted placeholder.",
+ "2010": [],
+ "2011": [],
+ "2012": [],
+ "2013": [],
+ "2013-reds": [],
+ "2016-blacks": [],
+ "2016-reds": [],
+ "2017": [],
+ "2020": [],
+ "girls": []
+}

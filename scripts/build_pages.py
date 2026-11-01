@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Builds the static HTML pages from data/club.json (squad, staff, sponsors, contacts).
+"""Builds the static HTML pages from data/club.json (squad, staff, sponsors, contacts)
+and data/team_sponsors.json (youth and girls team sponsors).
 Run this only when club details change; live match data is loaded by assets/js/site.js."""
 import html
 import re
 import json
 from pathlib import Path
+from urllib.parse import quote
 
 e = html.escape
 ROOT = Path(__file__).resolve().parent.parent
@@ -14,6 +16,10 @@ try:
     LIVE_TEAMS = json.loads((ROOT / "data" / "teams.json").read_text()).get("sides", {})
 except Exception:  # noqa: BLE001
     LIVE_TEAMS = {}
+try:
+    TEAM_SPONSORS = json.loads((ROOT / "data" / "team_sponsors.json").read_text())
+except Exception:  # noqa: BLE001
+    TEAM_SPONSORS = {}
 EMAIL = C["contact"]["email"]
 
 
@@ -132,6 +138,40 @@ def sponsor_tile(s):
     return f'<div class="{cls}" title="{e(s["name"])}">{inner}</div>'
 
 
+def sponsor_display_name(t):
+    """Name used for a team that has no separate sides. Girls are the 2016/17 side."""
+    if t["slug"] == "girls":
+        return "Girls 2016/17"
+    return t["title"]
+
+
+def youth_sponsor_units(t):
+    """One entry per youth/girls side, using the names those teams already use."""
+    if t.get("sides"):
+        return [{"id": sd["id"], "name": sd["name"], "page": team_page(t)} for sd in t["sides"]]
+    return [{"id": t["slug"], "name": sponsor_display_name(t), "page": team_page(t)}]
+
+
+def team_sponsor_items(team_id):
+    out = []
+    for s in TEAM_SPONSORS.get(team_id) or []:
+        if not isinstance(s, dict):
+            continue
+        name, logo = (s.get("name") or "").strip(), (s.get("logo") or "").strip()
+        if name or logo:
+            out.append({"name": name, "logo": logo, "tile": s.get("tile") or "light"})
+    return out
+
+
+def sponsor_mailto(team_name):
+    return f"mailto:{EMAIL}?subject={quote(f'Sponsoring the {team_name} team')}"
+
+
+def sponsor_placeholder(team_name, show_name=False):
+    who = f'<p>{e(team_name)}</p>' if show_name else ""
+    return f'<div class="info-card"><h3>Sponsor this team</h3>{who}<a class="btn btn-red" href="{sponsor_mailto(team_name)}">Get in touch</a></div>'
+
+
 SPONSOR_CTA = f"""<div class="cta-band"><div><h3>Partner with Eddlewood</h3><p>Interested in sponsoring Eddlewood FC? Get in touch with the club to find out about sponsorship opportunities.</p></div>
 <a class="btn btn-dark" href="mailto:{C['contact']['email']}?subject=Sponsorship%20enquiry">Enquire now</a></div>"""
 
@@ -193,7 +233,7 @@ home = f"""
 </div></section>
 
 <section class="bg-grey"><div class="wrap">
- <div class="sec-head"><div><div class="eyebrow">Thank you</div><h2>Our sponsors</h2></div><a class="more" href="sponsors.html">All sponsors</a></div>
+ <div class="sec-head"><div><div class="eyebrow">Thank you</div><h2>First team sponsors</h2></div><a class="more" href="sponsors.html">All sponsors</a></div>
  <div class="spons-strip">{''.join(sponsor_tile(s) for s in C['sponsors'] if s.get('logo'))[:100000]}</div>
 </div></section>
 """
@@ -258,15 +298,26 @@ squad = f"""
 
 # ----------------------------------------------------------------- SPONSORS
 player_sp = sorted([p for p in C["squad"] if p.get("sponsor")], key=lambda p: p["name"].split()[-1])
+def youth_sponsor_card(unit):
+    names = [s["name"] for s in team_sponsor_items(unit["id"]) if s.get("name")]
+    detail = ", ".join(e(n) for n in names) if names else "Sponsor wanted — get in touch"
+    return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>{detail}</span></a>'
+
+
+youth_units = [u for t in TEAMS if t["group"] != "senior" for u in youth_sponsor_units(t)]
 sponsors = f"""
-<section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/walkout_mascots.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Thank you</div><h1>Our Sponsors</h1><p>The local businesses and families who back Eddlewood FC. Please support them as they support us.</p></div></section>
+<section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/walkout_mascots.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Thank you</div><h1>Our Sponsors</h1><p>The local businesses who back Eddlewood FC and its teams. Please support them as they support us.</p></div></section>
 <section><div class="wrap">
- <div class="sec-head"><div><div class="eyebrow">Club partners</div><h2>Sponsors</h2></div></div>
+ <div class="sec-head"><div><div class="eyebrow">First team</div><h2>First team sponsors</h2></div></div>
  <div class="spons-strip spons-big">{''.join(sponsor_tile(s) for s in C['sponsors'])}</div>
 </div></section>
 <section class="bg-grey"><div class="wrap">
  <div class="sec-head"><div><div class="eyebrow">2026/27</div><h2>Player sponsors</h2></div></div>
  <div class="ps-list">{''.join(f'<div class="ps"><b>{e(p["name"])}</b><span>{e(p["sponsor"])}</span></div>' for p in player_sp)}</div>
+</div></section>
+<section><div class="wrap">
+ <div class="sec-head"><div><div class="eyebrow">Sponsor wanted</div><h2>Youth &amp; girls' team sponsors</h2></div></div>
+ <div class="link-grid">{''.join(youth_sponsor_card(u) for u in youth_units)}</div>
 </div></section>
 <section><div class="wrap">{SPONSOR_CTA}</div></section>
 """
@@ -382,6 +433,30 @@ def side_block(t, sd):
  </div></div>"""
 
 
+def team_sponsors_section(t):
+    units = youth_sponsor_units(t)
+    filled = [(u, team_sponsor_items(u["id"])) for u in units]
+    filled = [(u, items) for u, items in filled if items]
+    empty = [u for u in units if not team_sponsor_items(u["id"])]
+    blocks = []
+    for u, items in filled:
+        head = f'<h3 class="sub">{tt(u["name"])}</h3>' if len(units) > 1 else ""
+        blocks.append(f'<div>{head}<div class="spons-strip">{"".join(sponsor_tile(s) for s in items)}</div></div>')
+    if empty and not filled:
+        blocks.append(sponsor_placeholder(sponsor_display_name(t)))
+    else:
+        for u in empty:
+            blocks.append(sponsor_placeholder(u["name"], show_name=len(units) > 1))
+    if filled:
+        inner = f'<div style="display:grid;gap:16px">{"".join(blocks)}</div>' if len(blocks) > 1 else "".join(blocks)
+    else:
+        inner = f'<div class="link-grid">{"".join(blocks)}</div>'
+    return f"""<div style="margin-top:28px">
+ <div class="sec-head"><div><div class="eyebrow">Thank you</div><h2>Team sponsors</h2></div></div>
+ {inner}
+</div>"""
+
+
 def youth_page(t):
     sides = t.get("sides", [])
     if sides:
@@ -403,6 +478,7 @@ def youth_page(t):
   <div class="info-card"><h3>Coaches</h3><p>Coach details coming soon.</p></div>
   <div class="info-card"><h3>Training</h3><p>Training details coming soon.</p></div>
  </div>
+ {team_sponsors_section(t)}
  <div style="margin-top:22px">{JOIN}</div>
  <p style="margin-top:18px"><a class="more-link" href="teams.html">← All teams</a></p>
 </div></section>
@@ -414,7 +490,7 @@ pages = [
  ("fixtures.html", "Fixtures & Results", fixtures, "Eddlewood FC fixtures and results, updated automatically.", None),
  ("table.html", "League Table", table, "West of Scotland Football League Fourth Division table.", None),
  ("squad.html", "Squad", squad, "Eddlewood FC first-team squad and backroom staff.", None),
- ("sponsors.html", "Sponsors", sponsors, "The sponsors who support Eddlewood FC.", None),
+ ("sponsors.html", "Sponsors", sponsors, "The sponsors who support Eddlewood FC and its teams.", None),
  ("visit.html", "Matchday", visit, "Visiting Eddlewood Park: address, directions and admission prices.", None),
  ("contact.html", "Contact", contact, "Contact Eddlewood FC.", None),
  ("teams.html", "Teams", teams_index, "Eddlewood FC teams: first team, youth teams and girls.", None),
