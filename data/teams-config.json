@@ -1,0 +1,31 @@
+{
+ "_comment": "Club teams, in display order. 'sides' are the individual Eddlewood teams entered in competitions; each side lists where its fixtures/results/tables are published. Used by scripts/update_youth.py (live data) and scripts/build_pages.py (pages). Edit this file to add/rename a team, then run build_pages.py.",
+ "teams": [
+  {"slug": "first-team", "title": "First Team", "eyebrow": "Senior men", "group": "senior", "page": "first-team.html",
+   "summary": "West of Scotland Football League, Fourth Division. Home games at Eddlewood Park."},
+  {"slug": "2010", "title": "2010s", "eyebrow": "Youth · born 2010", "group": "youth", "format": "11-a-side",
+   "sides": [{"id": "2010", "name": "2010s", "label": "Eddlewood FC (2010)", "year": "2010", "variant": null,
+              "clyfa_table": {"feed": 1189}, "syfa_cup": true}]},
+  {"slug": "2011", "title": "2011s", "eyebrow": "Youth · born 2011", "group": "youth", "format": "11-a-side",
+   "sides": [{"id": "2011", "name": "2011s", "label": "Eddlewood FC 2011", "year": "2011", "variant": null,
+              "clyfa_table": {"feed": 1192}, "syfa_cup": true}]},
+  {"slug": "2012", "title": "2012s", "eyebrow": "Youth · born 2012", "group": "youth", "format": "11-a-side",
+   "sides": [{"id": "2012", "name": "2012s", "label": "Eddlewood FC (2012)", "year": "2012", "variant": null,
+              "clyfa_table": {"feed": 1194}, "syfa_cup": true}]},
+  {"slug": "2013", "title": "2013s", "eyebrow": "Youth · born 2013 · two teams", "group": "youth", "format": "11-a-side",
+   "sides": [{"id": "2013", "name": "2013s", "label": "Eddlewood FC (2013)", "year": "2013", "variant": null,
+              "clyfa_table": {"feed": 1200}, "syfa_cup": true},
+             {"id": "2013-reds", "name": "2013s Reds", "label": "Eddlewood FC Reds (2013)", "year": "2013", "variant": "red",
+              "clyfa_table": {"feed": 1201}, "syfa_cup": true}]},
+  {"slug": "2016", "title": "2016s", "eyebrow": "Youth · born 2016 · two teams", "group": "youth", "format": "Small-sided",
+   "sides": [{"id": "2016-blacks", "name": "2016s Blacks", "label": "16s - Eddlewood Blacks", "year": "16s", "variant": "black",
+              "clyfa_ss": {"team_id": "122902425"}},
+             {"id": "2016-reds", "name": "2016s Reds", "label": "16s - Eddlewood Reds", "year": "16s", "variant": "red",
+              "clyfa_ss": {"team_id": "243098316"}}]},
+  {"slug": "2017", "title": "2017s", "eyebrow": "Youth · born 2017", "group": "youth", "format": "Small-sided",
+   "sides": [{"id": "2017", "name": "2017s", "label": "17s - Eddlewood FC", "year": "17s", "variant": null,
+              "clyfa_ss": {"team_id": "764576502"}}]},
+  {"slug": "2020", "title": "2020s", "eyebrow": "Youth · born 2020", "group": "youth", "sides": []},
+  {"slug": "girls", "title": "Girls", "eyebrow": "Girls · born 2016/2017 · U8–U10", "group": "girls", "sides": []}
+ ]
+}

@@ -1,0 +1,71 @@
+name: Update fixtures, results & tables (all teams)
+
+on:
+  schedule:
+    # GitHub cron runs in UTC. Saturdays every 30 minutes from 12:00 to 23:30 UTC
+    # (covers 3pm / 2pm / 1:30pm kick-offs in both GMT and BST).
+    - cron: "*/30 12-23 * * 6"
+    # Midweek evenings (rearranged / cup games): hourly 18:00-23:00 UTC.
+    - cron: "5 18-23 * * 1-5"
+    # Youth football is mostly Saturday and Sunday mornings: every 30 minutes 09:00-11:30 UTC Sat,
+    # and hourly through Sunday daytime.
+    - cron: "*/30 9-11 * * 6"
+    - cron: "45 9-19 * * 0"
+    # Everything else: every 3 hours (picks up new fixtures, date changes, table updates).
+    - cron: "17 */3 * * *"
+  workflow_dispatch: {}   # "Run workflow" button for a manual refresh
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch latest WoSFL data
+        env:
+          CHROME_PATH: google-chrome   # preinstalled on GitHub's ubuntu-latest runners
+        run: python scripts/update_data.py
+        continue-on-error: true   # never let one source stop the others; scripts keep the last good data
+
+      - name: Fetch latest youth data (CLYFA + Scottish Youth FA)
+        env:
+          CHROME_PATH: google-chrome
+        run: python scripts/update_youth.py
+        continue-on-error: true
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name  "eddlewood-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          stamp() { python -c "import sys,json;print(json.load(sys.stdin).get('updated_at',''))" 2>/dev/null || true; }
+          OLD="$(git show HEAD:data/live.json 2>/dev/null | stamp) $(git show HEAD:data/teams.json 2>/dev/null | stamp)"
+          NEW="$(stamp < data/live.json) $(stamp < data/teams.json)"
+          LAST=$(git log -1 --format=%ct)
+          AGE_DAYS=$(( ( $(date +%s) - LAST ) / 86400 ))
+          if [ "$OLD" != "$NEW" ]; then
+            git add data/live.json data/teams.json
+            git commit -m "Data update $(date -u +'%Y-%m-%d %H:%M') UTC"
+          elif [ "$AGE_DAYS" -ge 25 ]; then
+            # Keep-alive: GitHub pauses scheduled workflows after 60 days with no repo activity.
+            git add data/live.json data/teams.json
+            git commit -m "Keep-alive data check $(date -u +'%Y-%m-%d')"
+          else
+            echo "No data change - nothing to commit."
+            exit 0
+          fi
+          git push

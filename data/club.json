@@ -1,0 +1,269 @@
+{
+ "name": "Eddlewood FC",
+ "full_name": "Eddlewood Football Club",
+ "tagline": "Our Town. Our Club.",
+ "league": "West of Scotland Football League",
+ "division": "Fourth Division",
+ "season": "2026/27",
+ "charity": "Eddlewood FC is a Scottish Charitable Incorporated Organisation (SCIO), Scottish charity number SC052242.",
+ "ground": {
+  "name": "Eddlewood Park",
+  "address": "Queens Drive, Hamilton ML3 7ST",
+  "map": "https://www.google.com/maps/search/?api=1&query=Eddlewood+Park%2C+Queens+Drive%2C+Hamilton+ML3+7ST"
+ },
+ "admission": [
+  [
+   "Adults",
+   "£6"
+  ],
+  [
+   "Concessions",
+   "£3"
+  ],
+  [
+   "Under-12s",
+   "Free",
+   "Must be accompanied by an adult"
+  ]
+ ],
+ "contact": {
+  "secretary": "Gerry McGhie",
+  "email": "info@eddlewoodfc.co.uk"
+ },
+ "social": [
+  {
+   "name": "Facebook",
+   "label": "Eddlewood FC",
+   "url": "https://www.facebook.com/eddlewoodfootballclub/"
+  },
+  {
+   "name": "Instagram",
+   "label": "@eddlewood.fc",
+   "url": "https://www.instagram.com/eddlewood.fc/"
+  },
+  {
+   "name": "X",
+   "label": "@EddlewoodFC",
+   "url": "https://x.com/EddlewoodFC"
+  }
+ ],
+ "squad": [
+  {
+   "name": "Andrew Docherty",
+   "sponsor": "Oliver Integrated"
+  },
+  {
+   "name": "Ben Brownlie",
+   "role": "Goalkeeper",
+   "sponsor": "David Brownlie"
+  },
+  {
+   "name": "Gary Brown"
+  },
+  {
+   "name": "Ajay Campbell",
+   "sponsor": "Positive Paving & Groundworks"
+  },
+  {
+   "name": "Bradley Campbell"
+  },
+  {
+   "name": "Keane Campbell",
+   "sponsor": "Allan Campbell & Sons"
+  },
+  {
+   "name": "Keiran Campbell",
+   "sponsor": "Allan Campbell & Sons"
+  },
+  {
+   "name": "Ryan Campbell",
+   "sponsor": "Allan Campbell & Sons"
+  },
+  {
+   "name": "Josh Clark",
+   "sponsor": "Positive Paving & Groundworks"
+  },
+  {
+   "name": "Daniel Collins",
+   "sponsor": "CM Roofing & Roughcasting"
+  },
+  {
+   "name": "Matthew Collins"
+  },
+  {
+   "name": "John Cunningham"
+  },
+  {
+   "name": "Ronan Gemmell"
+  },
+  {
+   "name": "Reece Hooper",
+   "sponsor": "LD Balloon Studio & Morgan Hooper"
+  },
+  {
+   "name": "Craig Kerr"
+  },
+  {
+   "name": "Luke Lickrish",
+   "sponsor": "Colin Lickrish"
+  },
+  {
+   "name": "Alan Lithgow",
+   "role": "Captain",
+   "sponsor": "Ryan Campbell"
+  },
+  {
+   "name": "Ruan Macrae",
+   "sponsor": "Joe Cunningham"
+  },
+  {
+   "name": "Rhys McGhie",
+   "sponsor": "Barber Jac The Barber Room @ Nicola Innes"
+  },
+  {
+   "name": "Robbie McGhie",
+   "sponsor": "Barber Jac The Barber Room @ Nicola Innes"
+  },
+  {
+   "name": "Cameron Mellor",
+   "sponsor": "Aldo@G4Claims"
+  },
+  {
+   "name": "Nicholas Moore",
+   "sponsor": "Ryan Burns Plastering & Roughcasting"
+  }
+ ],
+ "staff": [
+  [
+   "Brian McKinven",
+   "Manager"
+  ],
+  [
+   "Paul Burns",
+   "Coach"
+  ],
+  [
+   "Stevie Burr",
+   "Coach"
+  ],
+  [
+   "Kenny Cooper",
+   "Coach"
+  ],
+  [
+   "Darci Burns",
+   "Physio"
+  ]
+ ],
+ "sponsors": [
+  {
+   "name": "Procast Building Contractors",
+   "logo": "assets/img/sponsors/procast.svg",
+   "tile": "dark",
+   "caption": false
+  },
+  {
+   "name": "Burton Roofing",
+   "logo": "assets/img/sponsors/burton_roofing.png",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "HISA",
+   "logo": "assets/img/sponsors/hisa.png",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "POS Group",
+   "logo": "assets/img/sponsors/pos_group.svg",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Structherm",
+   "logo": "assets/img/sponsors/structherm.png",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "MPC Coatings",
+   "logo": "assets/img/sponsors/mpc_coatings.png",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "DL Architectural",
+   "logo": "assets/img/sponsors/dl_architectural.svg",
+   "tile": "dark",
+   "caption": false
+  },
+  {
+   "name": "Advance Vehicle Rental",
+   "logo": "assets/img/sponsors/advance_vehicle_rental.svg",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Jewson",
+   "logo": "assets/img/sponsors/jewson.svg",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Plumbstore",
+   "logo": "assets/img/sponsors/plumbstore.png",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Alex Young Bakers",
+   "logo": "assets/img/sponsors/alex_young_bakers_v3.png",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Cadzow Plumbing & Heating",
+   "logo": null,
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Park's Motor Group",
+   "logo": "assets/img/sponsors/parks_motor_group.png",
+   "tile": "dark",
+   "caption": false
+  },
+  {
+   "name": "City Electrical Factors",
+   "logo": "assets/img/sponsors/cef.svg",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Graham Plumbers' Merchant",
+   "logo": "assets/img/sponsors/graham.png",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Shotokan Karate Hamilton",
+   "logo": "assets/img/sponsors/shotokan_karate_hamilton.jpg",
+   "tile": "white",
+   "caption": true
+  },
+  {
+   "name": "Allan Campbell & Sons Roughcasting",
+   "logo": "assets/img/sponsors/allan_campbell_sons.png",
+   "tile": "white",
+   "caption": false
+  },
+  {
+   "name": "Cadzow Car Clinic",
+   "logo": "assets/img/sponsors/cadzow_car_clinic.png",
+   "tile": "white",
+   "caption": false
+  }
+ ],
+ "news": []
+}

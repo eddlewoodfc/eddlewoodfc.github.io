@@ -1,0 +1,846 @@
+{
+ "sides": {
+  "2010": {
+   "team": "2010",
+   "label": "Eddlewood FC (2010)",
+   "ids": {
+    "clyfa_feed": "1189"
+   },
+   "sources": [
+    {
+     "name": "CLYFA league table",
+     "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1189"
+    },
+    {
+     "name": "SYFA Scottish Cup",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2010s/2026-2027/"
+    }
+   ],
+   "table": {
+    "division": "CLYFA 2010s (A) Division",
+    "season": "2026/27",
+    "rows": [
+     {
+      "pos": 1,
+      "team": "Carluke Thistle",
+      "p": 3,
+      "w": 3,
+      "d": 0,
+      "l": 0,
+      "pts": 9
+     },
+     {
+      "pos": 2,
+      "team": "East Kilbride Y C (2010)",
+      "p": 2,
+      "w": 2,
+      "d": 0,
+      "l": 0,
+      "pts": 6
+     },
+     {
+      "pos": 3,
+      "team": "Chryston FC 10",
+      "p": 3,
+      "w": 2,
+      "d": 0,
+      "l": 1,
+      "pts": 6
+     },
+     {
+      "pos": 4,
+      "team": "Moorlands F C (2010)",
+      "p": 4,
+      "w": 2,
+      "d": 0,
+      "l": 2,
+      "pts": 6
+     },
+     {
+      "pos": 5,
+      "team": "Eddlewood FC (2010)",
+      "p": 2,
+      "w": 1,
+      "d": 0,
+      "l": 1,
+      "pts": 3
+     },
+     {
+      "pos": 6,
+      "team": "Royal Albert FC (2010)",
+      "p": 2,
+      "w": 1,
+      "d": 0,
+      "l": 1,
+      "pts": 3
+     },
+     {
+      "pos": 7,
+      "team": "Westend Utd",
+      "p": 1,
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "pts": 0
+     },
+     {
+      "pos": 8,
+      "team": "Ekfc red 2010",
+      "p": 2,
+      "w": 0,
+      "d": 0,
+      "l": 2,
+      "pts": 0
+     },
+     {
+      "pos": 9,
+      "team": "Cambuslang Rangers (2010)",
+      "p": 3,
+      "w": 0,
+      "d": 0,
+      "l": 3,
+      "pts": 0
+     }
+    ],
+    "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1189",
+    "source": "Central Lanarkshire Youth Football Association (CLYFA)"
+   },
+   "fixtures": [],
+   "results": [
+    {
+     "date": "2026-09-12",
+     "time": null,
+     "kickoff": "2026-09-12T12:00:00+01:00",
+     "home": "Eddlewood (2010)",
+     "away": "Cambuslang Rangers (2010)",
+     "competition": "SYFA Scottish Cup",
+     "venue": "Larkhall Academy",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2010s/2026-2027/",
+     "home_score": 4,
+     "away_score": 2
+    },
+    {
+     "date": "2026-10-02",
+     "time": null,
+     "kickoff": "2026-10-02T12:00:00+01:00",
+     "home": "Eddlewood (2010)",
+     "away": "Ekfc red 2010",
+     "competition": "SYFA Scottish Cup",
+     "venue": "Coltness High School",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2010s/2026-2027/",
+     "home_score": 1,
+     "away_score": 1
+    },
+    {
+     "date": "2026-10-31",
+     "time": null,
+     "kickoff": "2026-10-31T12:00:00+00:00",
+     "home": "Riverside Maroons (2010)",
+     "away": "Eddlewood (2010)",
+     "competition": "SYFA Scottish Cup",
+     "venue": "Stirling University",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2010s/2026-2027/",
+     "home_score": 0,
+     "away_score": 5
+    }
+   ]
+  },
+  "2011": {
+   "team": "2011",
+   "label": "Eddlewood FC 2011",
+   "ids": {
+    "clyfa_feed": "1192"
+   },
+   "sources": [
+    {
+     "name": "CLYFA league table",
+     "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1192"
+    },
+    {
+     "name": "SYFA Scottish Cup",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2011s/2026-2027/"
+    }
+   ],
+   "table": {
+    "division": "CLYFA 2011s (C) Division",
+    "season": "2026/27",
+    "rows": [
+     {
+      "pos": 1,
+      "team": "EKRR 2011",
+      "p": 4,
+      "w": 2,
+      "d": 1,
+      "l": 1,
+      "pts": 7
+     },
+     {
+      "pos": 2,
+      "team": "Blantyre Soccer Academy 2011 Yellow",
+      "p": 3,
+      "w": 2,
+      "d": 0,
+      "l": 1,
+      "pts": 6
+     },
+     {
+      "pos": 3,
+      "team": "Albion Rovers Community Club Yellow (2011)",
+      "p": 3,
+      "w": 2,
+      "d": 0,
+      "l": 1,
+      "pts": 6
+     },
+     {
+      "pos": 4,
+      "team": "Royal Albert FC (2011)",
+      "p": 2,
+      "w": 2,
+      "d": 0,
+      "l": 0,
+      "pts": 6
+     },
+     {
+      "pos": 5,
+      "team": "Symington Tinto (2011)",
+      "p": 3,
+      "w": 2,
+      "d": 0,
+      "l": 1,
+      "pts": 6
+     },
+     {
+      "pos": 6,
+      "team": "Greengairs 2011 Phoenix",
+      "p": 4,
+      "w": 2,
+      "d": 0,
+      "l": 2,
+      "pts": 6
+     },
+     {
+      "pos": 7,
+      "team": "Kirkfield United Red (2011)",
+      "p": 3,
+      "w": 1,
+      "d": 1,
+      "l": 1,
+      "pts": 4
+     },
+     {
+      "pos": 8,
+      "team": "Motherwell Phoenix FC (2011)",
+      "p": 2,
+      "w": 1,
+      "d": 0,
+      "l": 1,
+      "pts": 3
+     },
+     {
+      "pos": 9,
+      "team": "Eddlewood FC 2011",
+      "p": 3,
+      "w": 1,
+      "d": 0,
+      "l": 2,
+      "pts": 3
+     },
+     {
+      "pos": 10,
+      "team": "Blantyre Celtic CFC Yellows",
+      "p": 2,
+      "w": 0,
+      "d": 0,
+      "l": 2,
+      "pts": 0
+     },
+     {
+      "pos": 11,
+      "team": "Kildrum United (2011)",
+      "p": 3,
+      "w": 0,
+      "d": 0,
+      "l": 3,
+      "pts": 0
+     }
+    ],
+    "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1192",
+    "source": "Central Lanarkshire Youth Football Association (CLYFA)"
+   },
+   "fixtures": [],
+   "results": [
+    {
+     "date": "2026-10-03",
+     "time": null,
+     "kickoff": "2026-10-03T12:00:00+01:00",
+     "home": "Eddlewood 2011",
+     "away": "Westerton United F C Academy (2011)",
+     "competition": "SYFA Scottish Cup",
+     "venue": "Newton Farm School (3G)",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2011s/2026-2027/",
+     "home_score": 2,
+     "away_score": 4
+    }
+   ]
+  },
+  "2012": {
+   "team": "2012",
+   "label": "Eddlewood FC (2012)",
+   "ids": {
+    "clyfa_feed": "1194"
+   },
+   "sources": [
+    {
+     "name": "CLYFA league table",
+     "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1194"
+    },
+    {
+     "name": "SYFA Scottish Cup",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2012s/2026-2027/"
+    }
+   ],
+   "table": {
+    "division": "CLYFA 2012s (A) Division (Tier 1)",
+    "season": "2026/27",
+    "rows": [
+     {
+      "pos": 1,
+      "team": "Holytown Colts FC (Reds 2012)",
+      "p": 5,
+      "w": 5,
+      "d": 0,
+      "l": 0,
+      "pts": 15
+     },
+     {
+      "pos": 2,
+      "team": "Blantyre Victoria Y F C Blue 2012",
+      "p": 5,
+      "w": 5,
+      "d": 0,
+      "l": 0,
+      "pts": 15
+     },
+     {
+      "pos": 3,
+      "team": "East Kilbride FC Gold (2012)",
+      "p": 4,
+      "w": 3,
+      "d": 0,
+      "l": 1,
+      "pts": 9
+     },
+     {
+      "pos": 4,
+      "team": "Cambusnethan Talbot Community FC Blacks 2012",
+      "p": 4,
+      "w": 3,
+      "d": 0,
+      "l": 1,
+      "pts": 9
+     },
+     {
+      "pos": 5,
+      "team": "Gartcairn Football Academy Blacks 2012",
+      "p": 6,
+      "w": 3,
+      "d": 0,
+      "l": 3,
+      "pts": 9
+     },
+     {
+      "pos": 6,
+      "team": "Heston Rovers 2012",
+      "p": 2,
+      "w": 1,
+      "d": 0,
+      "l": 1,
+      "pts": 3
+     },
+     {
+      "pos": 7,
+      "team": "St. Patrick's SA (2012)",
+      "p": 5,
+      "w": 1,
+      "d": 0,
+      "l": 4,
+      "pts": 3
+     },
+     {
+      "pos": 8,
+      "team": "Wishaw Wycombe Wanderers (2012)",
+      "p": 7,
+      "w": 1,
+      "d": 0,
+      "l": 6,
+      "pts": 3
+     },
+     {
+      "pos": 9,
+      "team": "Eddlewood FC (2012)",
+      "p": 5,
+      "w": 1,
+      "d": 0,
+      "l": 4,
+      "pts": 3
+     },
+     {
+      "pos": 10,
+      "team": "Inspire (2012)",
+      "p": 3,
+      "w": 0,
+      "d": 0,
+      "l": 3,
+      "pts": 0
+     }
+    ],
+    "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1194",
+    "source": "Central Lanarkshire Youth Football Association (CLYFA)"
+   },
+   "fixtures": [],
+   "results": [
+    {
+     "date": "2026-10-31",
+     "time": null,
+     "kickoff": "2026-10-31T12:00:00+00:00",
+     "home": "EAST KILBRIDE Y C (2012)",
+     "away": "Eddlewood (2012)",
+     "competition": "SYFA Scottish Cup",
+     "venue": "Enviro-Clean Stadium",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2012s/2026-2027/",
+     "home_score": 1,
+     "away_score": 0
+    }
+   ]
+  },
+  "2013": {
+   "team": "2013",
+   "label": "Eddlewood FC (2013)",
+   "ids": {
+    "clyfa_feed": "1200"
+   },
+   "sources": [
+    {
+     "name": "CLYFA league table",
+     "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1200"
+    },
+    {
+     "name": "SYFA Scottish Cup",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2013s/2026-2027/"
+    }
+   ],
+   "table": {
+    "division": "CLYFA 2013s (B) Division",
+    "season": "2026/27",
+    "rows": [
+     {
+      "pos": 1,
+      "team": "Wishaw Wycombe Wanderers (2013)",
+      "p": 3,
+      "w": 3,
+      "d": 0,
+      "l": 0,
+      "pts": 9
+     },
+     {
+      "pos": 2,
+      "team": "Bellshill Athletic FC Blacks (2013)",
+      "p": 5,
+      "w": 2,
+      "d": 1,
+      "l": 2,
+      "pts": 7
+     },
+     {
+      "pos": 3,
+      "team": "Chryston FC 13",
+      "p": 2,
+      "w": 2,
+      "d": 0,
+      "l": 0,
+      "pts": 6
+     },
+     {
+      "pos": 4,
+      "team": "Larkhall Thistle Community FC (2013)",
+      "p": 2,
+      "w": 2,
+      "d": 0,
+      "l": 0,
+      "pts": 6
+     },
+     {
+      "pos": 5,
+      "team": "Gairdoch United Football Club (2013)",
+      "p": 3,
+      "w": 2,
+      "d": 0,
+      "l": 1,
+      "pts": 6
+     },
+     {
+      "pos": 6,
+      "team": "Moorlands F C (2013)",
+      "p": 4,
+      "w": 1,
+      "d": 1,
+      "l": 2,
+      "pts": 4
+     },
+     {
+      "pos": 7,
+      "team": "EKRR 2013",
+      "p": 2,
+      "w": 1,
+      "d": 0,
+      "l": 1,
+      "pts": 3
+     },
+     {
+      "pos": 8,
+      "team": "Eddlewood FC (2013)",
+      "p": 2,
+      "w": 0,
+      "d": 1,
+      "l": 1,
+      "pts": 1
+     },
+     {
+      "pos": 9,
+      "team": "Claremont AFC 2013 Blue",
+      "p": 3,
+      "w": 0,
+      "d": 1,
+      "l": 2,
+      "pts": 1
+     },
+     {
+      "pos": 10,
+      "team": "W Academy Bills 2013",
+      "p": 1,
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "pts": 0
+     },
+     {
+      "pos": 11,
+      "team": "Motherwell FC Community Trust (2013)",
+      "p": 1,
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "pts": 0
+     },
+     {
+      "pos": 12,
+      "team": "Motherwell Phoenix FC White (2013)",
+      "p": 2,
+      "w": 0,
+      "d": 0,
+      "l": 2,
+      "pts": 0
+     }
+    ],
+    "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1200",
+    "source": "Central Lanarkshire Youth Football Association (CLYFA)"
+   },
+   "fixtures": [],
+   "results": [
+    {
+     "date": "2026-09-12",
+     "time": null,
+     "kickoff": "2026-09-12T12:00:00+01:00",
+     "home": "Eddlewood (2013)",
+     "away": "West Park United Gold (2013)",
+     "competition": "SYFA Scottish Cup",
+     "venue": "Hamilton Palace Grounds",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2013s/2026-2027/",
+     "home_score": 4,
+     "away_score": 3
+    },
+    {
+     "date": "2026-10-03",
+     "time": null,
+     "kickoff": "2026-10-03T12:00:00+01:00",
+     "home": "Eddlewood (2013)",
+     "away": "Galaxy Foundation (2013)",
+     "competition": "SYFA Scottish Cup",
+     "venue": "Jock Stein Centre",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2013s/2026-2027/",
+     "home_score": 9,
+     "away_score": 1
+    },
+    {
+     "date": "2026-10-31",
+     "time": null,
+     "kickoff": "2026-10-31T12:00:00+00:00",
+     "home": "EKRR 2013",
+     "away": "Eddlewood (2013)",
+     "competition": "SYFA Scottish Cup",
+     "venue": "The Murray Owen Ave",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2013s/2026-2027/",
+     "home_score": 3,
+     "away_score": 3
+    }
+   ]
+  },
+  "2013-reds": {
+   "team": "2013",
+   "label": "Eddlewood FC Reds (2013)",
+   "ids": {
+    "clyfa_feed": "1201"
+   },
+   "sources": [
+    {
+     "name": "CLYFA league table",
+     "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1201"
+    },
+    {
+     "name": "SYFA Scottish Cup",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2013s/2026-2027/"
+    }
+   ],
+   "table": {
+    "division": "CLYFA 2013s (C) Division",
+    "season": "2026/27",
+    "rows": [
+     {
+      "pos": 1,
+      "team": "Scotland Boys Club (2013 Black)",
+      "p": 5,
+      "w": 2,
+      "d": 1,
+      "l": 2,
+      "pts": 7
+     },
+     {
+      "pos": 2,
+      "team": "Lochar Thistle 2013",
+      "p": 2,
+      "w": 2,
+      "d": 0,
+      "l": 0,
+      "pts": 6
+     },
+     {
+      "pos": 3,
+      "team": "East Kilbride FC (2013)",
+      "p": 2,
+      "w": 2,
+      "d": 0,
+      "l": 0,
+      "pts": 6
+     },
+     {
+      "pos": 4,
+      "team": "Upper Annandale FC 2013s",
+      "p": 3,
+      "w": 1,
+      "d": 2,
+      "l": 0,
+      "pts": 5
+     },
+     {
+      "pos": 5,
+      "team": "Burnbank FC (2013)",
+      "p": 2,
+      "w": 1,
+      "d": 1,
+      "l": 0,
+      "pts": 4
+     },
+     {
+      "pos": 6,
+      "team": "Hamilton YFC 2013 Navy",
+      "p": 2,
+      "w": 1,
+      "d": 1,
+      "l": 0,
+      "pts": 4
+     },
+     {
+      "pos": 7,
+      "team": "Blantyre Victoria FC (2013) Blue",
+      "p": 3,
+      "w": 1,
+      "d": 1,
+      "l": 1,
+      "pts": 4
+     },
+     {
+      "pos": 8,
+      "team": "Blantyre Victoria Y F C Black 2013",
+      "p": 3,
+      "w": 1,
+      "d": 0,
+      "l": 2,
+      "pts": 3
+     },
+     {
+      "pos": 9,
+      "team": "Clyde FC Community (Cambuslang) (2013s) White",
+      "p": 3,
+      "w": 0,
+      "d": 1,
+      "l": 2,
+      "pts": 1
+     },
+     {
+      "pos": 10,
+      "team": "Royal Albert FC (2013)",
+      "p": 4,
+      "w": 0,
+      "d": 1,
+      "l": 3,
+      "pts": 1
+     },
+     {
+      "pos": 11,
+      "team": "Eddlewood FC reds (2013)",
+      "p": 1,
+      "w": 0,
+      "d": 0,
+      "l": 1,
+      "pts": 0
+     }
+    ],
+    "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1201",
+    "source": "Central Lanarkshire Youth Football Association (CLYFA)"
+   },
+   "fixtures": [],
+   "results": [
+    {
+     "date": "2026-09-12",
+     "time": null,
+     "kickoff": "2026-09-12T12:00:00+01:00",
+     "home": "Eddlewood reds (2013)",
+     "away": "Camelon Juniors 2013 Red",
+     "competition": "SYFA Scottish Cup",
+     "venue": "Hamilton Palace Grounds",
+     "url": "https://scottishyouthfa.co.uk/competitions/scottish-cup-2013s/2026-2027/",
+     "home_score": 0,
+     "away_score": 8
+    }
+   ]
+  },
+  "2016-blacks": {
+   "team": "2016",
+   "label": "16s - Eddlewood Blacks",
+   "ids": {
+    "ss_team": "122902425",
+    "ss_season": "463404811"
+   },
+   "sources": [
+    {
+     "name": "CLYFA small-sided fixtures",
+     "url": "https://clyfa.leaguerepublic.com/team/463404811/122902425.html"
+    }
+   ],
+   "fixtures": [
+    {
+     "date": "2026-10-31",
+     "time": null,
+     "kickoff": "2026-10-31T12:00:00+00:00",
+     "home": "16s - Wishaw Wycombe Yellow",
+     "away": "16s - Eddlewood Blacks",
+     "competition": "2016 High Intermediate",
+     "venue": "Wishaw Sports Centre Astro",
+     "url": "https://clyfa.leaguerepublic.com/match/45560760.html"
+    },
+    {
+     "date": "2026-11-07",
+     "time": "10:00",
+     "kickoff": "2026-11-07T10:00:00+00:00",
+     "home": "16s - Eddlewood Blacks",
+     "away": "16s - Albion Rovers",
+     "competition": "2016 High Intermediate",
+     "venue": "7s - Jock Stein Pitch 1",
+     "url": "https://clyfa.leaguerepublic.com/match/45607285.html"
+    }
+   ],
+   "results": [],
+   "scores_published": false
+  },
+  "2016-reds": {
+   "team": "2016",
+   "label": "16s - Eddlewood Reds",
+   "ids": {
+    "ss_team": "243098316",
+    "ss_season": "463404811"
+   },
+   "sources": [
+    {
+     "name": "CLYFA small-sided fixtures",
+     "url": "https://clyfa.leaguerepublic.com/team/463404811/243098316.html"
+    }
+   ],
+   "fixtures": [
+    {
+     "date": "2026-10-31",
+     "time": "10:00",
+     "kickoff": "2026-10-31T10:00:00+00:00",
+     "home": "16s - Eddlewood Reds",
+     "away": "16s - Cambusnethan Talbot White",
+     "competition": "2016 High Intermediate",
+     "venue": "7s - Jock Stein Pitch 2",
+     "url": "https://clyfa.leaguerepublic.com/match/45560762.html"
+    },
+    {
+     "date": "2026-11-07",
+     "time": null,
+     "kickoff": "2026-11-07T12:00:00+00:00",
+     "home": "16s - Airdrie Blacks",
+     "away": "16s - Eddlewood Reds",
+     "competition": "2016 High Intermediate",
+     "venue": "Airdrie Leisure Centre Gartcairn Pitch",
+     "url": "https://clyfa.leaguerepublic.com/match/45607281.html"
+    }
+   ],
+   "results": [],
+   "scores_published": false
+  },
+  "2017": {
+   "team": "2017",
+   "label": "17s - Eddlewood FC",
+   "ids": {
+    "ss_team": "764576502",
+    "ss_season": "463404811"
+   },
+   "sources": [
+    {
+     "name": "CLYFA small-sided fixtures",
+     "url": "https://clyfa.leaguerepublic.com/team/463404811/764576502.html"
+    }
+   ],
+   "fixtures": [
+    {
+     "date": "2026-11-07",
+     "time": null,
+     "kickoff": "2026-11-07T12:00:00+00:00",
+     "home": "17s - Motherwell Phoenix Blacks",
+     "away": "17s - Eddlewood FC",
+     "competition": "2017 Challenge Division 3",
+     "venue": "Our Lady's High School",
+     "url": "https://clyfa.leaguerepublic.com/match/45561095.html"
+    },
+    {
+     "date": "2026-11-14",
+     "time": "09:00",
+     "kickoff": "2026-11-14T09:00:00+00:00",
+     "home": "17s - Eddlewood FC",
+     "away": "17s - North Motherwell FC Blue",
+     "competition": "2017 Challenge Division 3",
+     "venue": "7s - Jock Stein Pitch 3",
+     "url": "https://clyfa.leaguerepublic.com/match/45601326.html"
+    }
+   ],
+   "results": [],
+   "scores_published": false
+  }
+ },
+ "checked_at": "2026-10-31T20:17:58+00:00",
+ "updated_at": "2026-10-31T20:11:33+00:00",
+ "warnings": []
+}
