@@ -28,6 +28,7 @@
              {"id": "2016-reds", "name": "2016s Reds", "label": "16s - Eddlewood Reds", "year": "16s", "variant": "red",
               "clyfa_ss": {"team_id": "243098316"}}]},
   {"slug": "2017", "title": "2017s", "eyebrow": "Youth · born 2017", "group": "youth", "format": "Small-sided",
+   "facebook": {"name": "Eddlewood boys club 2017", "url": "https://www.facebook.com/profile.php?id=61564997840907"},
    "sides": [{"id": "2017", "name": "2017s", "label": "17s - Eddlewood FC", "year": "17s", "variant": null,
               "clyfa_ss": {"team_id": "764576502"}}]},
   {"slug": "2020", "title": "2020s", "eyebrow": "Youth · born 2020", "group": "youth", "sides": []},
