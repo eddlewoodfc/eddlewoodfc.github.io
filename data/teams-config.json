@@ -22,6 +22,7 @@
              {"id": "2013-reds", "name": "2013s Reds", "label": "Eddlewood FC Reds (2013)", "year": "2013", "variant": "red",
               "clyfa_table": {"feed": 1201}, "syfa_cup": true}]},
   {"slug": "2016", "title": "2016s", "eyebrow": "Youth · born 2016 · two teams", "group": "youth", "format": "Small-sided",
+   "facebook": {"name": "Eddlewood Boys Club 2016", "url": "https://www.facebook.com/profile.php?id=100063960823104"},
    "sides": [{"id": "2016-blacks", "name": "2016s Blacks", "label": "16s - Eddlewood Blacks", "year": "16s", "variant": "black",
               "clyfa_ss": {"team_id": "122902425"}},
              {"id": "2016-reds", "name": "2016s Reds", "label": "16s - Eddlewood Reds", "year": "16s", "variant": "red",
