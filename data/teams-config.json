@@ -16,6 +16,7 @@
    "sides": [{"id": "2012", "name": "2012s", "label": "Eddlewood FC (2012)", "year": "2012", "variant": null,
               "clyfa_table": {"feed": 1194}, "syfa_cup": true}]},
   {"slug": "2013", "title": "2013s", "eyebrow": "Youth · born 2013 · two teams", "group": "youth", "format": "11-a-side",
+   "facebook": {"name": "Eddlewood 2013's", "url": "https://www.facebook.com/profile.php?id=61556514353682"},
    "sides": [{"id": "2013", "name": "2013s", "label": "Eddlewood FC (2013)", "year": "2013", "variant": null,
               "clyfa_table": {"feed": 1200}, "syfa_cup": true},
              {"id": "2013-reds", "name": "2013s Reds", "label": "Eddlewood FC Reds (2013)", "year": "2013", "variant": "red",
