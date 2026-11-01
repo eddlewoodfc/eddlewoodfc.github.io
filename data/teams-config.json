@@ -1,9 +1,10 @@
 {
- "_comment": "Club teams, in display order. 'sides' are the individual Eddlewood teams entered in competitions; each side lists where its fixtures/results/tables are published. Optional 'facebook' is {url, name} for that team's own page. Used by scripts/update_youth.py (live data) and scripts/build_pages.py (pages). Edit this file to add/rename a team, then run build_pages.py.",
+ "_comment": "Club teams, in display order. 'sides' are the individual Eddlewood teams entered in competitions; each side lists where its fixtures/results/tables are published. Optional 'facebook' is {url, name} for a team's page, or a facebook.com/groups URL which is shown as 'Join the … Facebook group'. Used by scripts/update_youth.py (live data) and scripts/build_pages.py (pages). Edit this file to add/rename a team, then run build_pages.py.",
  "teams": [
   {"slug": "first-team", "title": "First Team", "eyebrow": "Senior men", "group": "senior", "page": "first-team.html",
    "summary": "West of Scotland Football League, Fourth Division. Home games at Eddlewood Park."},
   {"slug": "2010", "title": "2010s", "eyebrow": "Youth · born 2010", "group": "youth", "format": "11-a-side",
+   "facebook": {"url": "https://www.facebook.com/groups/133945903909003/"},
    "sides": [{"id": "2010", "name": "2010s", "label": "Eddlewood FC (2010)", "year": "2010", "variant": null,
               "clyfa_table": {"feed": 1189}, "syfa_cup": true}]},
   {"slug": "2011", "title": "2011s", "eyebrow": "Youth · born 2011", "group": "youth", "format": "11-a-side",

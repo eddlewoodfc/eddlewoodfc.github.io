@@ -394,7 +394,7 @@ teams_index = f"""
 
 
 def facebook_follow(t):
-    """Prominent follow button when a team has its own Facebook page in the config."""
+    """Prominent Facebook button when a team has a page or group in the config."""
     fb = t.get("facebook") or {}
     if isinstance(fb, str):
         fb = {"url": fb}
@@ -402,12 +402,14 @@ def facebook_follow(t):
     if not url:
         return ""
     name = str(fb.get("name") or "").strip()
-    label = f"Follow the {t['title']} on Facebook"
+    group = "/groups/" in url or str(fb.get("kind") or "") == "group"
+    label = f"Join the {t['title']} Facebook group" if group else f"Follow the {t['title']} on Facebook"
+    visible = f"Join the {tt(t['title'])} Facebook group" if group else f"Follow the {tt(t['title'])} on Facebook"
     aria = f"{label} ({name})" if name else label
     icon = ICON["Facebook"].replace("<svg", '<svg fill="#fff"', 1)
     caption = f'<p>{e(name)}</p>' if name else ""
     return (f'<div style="margin-top:18px"><a class="btn btn-red" href="{e(url)}" target="_blank" rel="noopener" '
-            f'aria-label="{e(aria)}" title="{e(name or label)}">{icon}Follow the {tt(t["title"])} on Facebook</a></div>{caption}')
+            f'aria-label="{e(aria)}" title="{e(name or label)}">{icon}{visible}</a></div>{caption}')
 
 
 first_team = f"""
