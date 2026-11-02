@@ -75,12 +75,53 @@ def nav_key(fname):
 
 
 def shown_social():
-    """Social accounts with a URL. Empty slots (for example X, until the club has one) stay in the data and are not linked."""
+    """Social accounts with a URL. Empty slots stay in the data and are not linked."""
     return [s for s in C["social"] if str(s.get("url") or "").strip()]
 
 
+def social_scope(s):
+    """Who the account belongs to, when it is not the whole club. Facebook has none."""
+    return str(s.get("scope") or "").strip()
+
+
+def social_aria(s):
+    scope = social_scope(s)
+    if scope:
+        return f'{s["name"]} ({scope.lower()}): {s["label"]}'
+    return f'{s["name"]}: {s["label"]}'
+
+
+def social_visible(s):
+    """Text next to an icon. First-team accounts say so; the club account shows its name."""
+    scope = social_scope(s)
+    if scope:
+        return f'{scope} · {s["label"]}'
+    return s["label"]
+
+
+def social_footer_text(s):
+    scope = social_scope(s)
+    if scope:
+        return f'{s["name"]} · {scope} ({s["label"]})'
+    return f'{s["name"]} · {s["label"]}'
+
+
+def social_contact_label(s):
+    scope = social_scope(s)
+    if scope:
+        return f'{s["name"]} · {scope}'
+    return s["name"]
+
+
 def social_links(cls=""):
-    return "".join(f'<a href="{s["url"]}" target="_blank" rel="noopener" aria-label="{s["name"]}: {e(s["label"])}" class="{cls}">{ICON[s["name"]]}{"<span>" + e(s["label"]) + "</span>" if cls else ""}</a>' for s in shown_social())
+    parts = []
+    for s in shown_social():
+        aria = e(social_aria(s))
+        span = f"<span>{e(social_visible(s))}</span>" if cls else ""
+        parts.append(
+            f'<a href="{s["url"]}" target="_blank" rel="noopener" aria-label="{aria}" title="{aria}" class="{cls}">'
+            f'{ICON[s["name"]]}{span}</a>')
+    return "".join(parts)
 
 
 def page(fname, title, body, desc, hero_img=None):
@@ -128,7 +169,7 @@ def footer():
  <p style="margin-top:16px;max-width:360px">{e(C['ground']['name'])}, {e(C['ground']['address'])}</p></div>
  <div><h4>Teams</h4><ul>{''.join(f'<li><a href="{team_page(t)}">{e(t["title"])}</a></li>' for t in TEAMS)}</ul></div>
  <div><h4>Club</h4><ul><li><a href="fixtures.html">Fixtures &amp; results</a></li><li><a href="table.html">League table</a></li><li><a href="squad.html">First-team squad</a></li><li><a href="sponsors.html">Sponsors</a></li><li><a href="visit.html">Matchday</a></li><li><a href="shop.html">Club shop</a></li><li><a href="contact.html">Contact</a></li></ul></div>
- <div><h4>Follow</h4><ul>{''.join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{s["name"]} · {e(s["label"])}</a></li>' for s in shown_social())}</ul></div>
+ <div><h4>Follow</h4><ul>{''.join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{e(social_footer_text(s))}</a></li>' for s in shown_social())}</ul></div>
 </div>
 <div class="f-legal"><span>{e(C['charity'])}</span><span>Fixtures, results and tables update automatically from the West of Scotland Football League, CLYFA and Scottish Youth FA websites.</span><span>© <span id="yr">2026</span> Eddlewood FC</span></div>
 </div></footer>"""
@@ -374,7 +415,8 @@ def player_card(p):
     tag = f'<span class="role{" gk" if role == "Goalkeeper" else ""}">{e(role)}</span>' if role else ""
     photo = photo_src(p)
     if photo:
-        frame = f'<div class="ph has-photo"><img class="portrait" src="{e(photo)}" alt="{e(p["name"])}" width="640" height="800"></div>'
+        frame = (f'<div class="ph has-photo"><img class="portrait" src="{e(photo)}" alt="{e(p["name"])}" width="640" height="800">'
+                 f'<img class="wm" src="assets/img/badge-256.png" alt=""></div>')
     else:
         frame = f'<div class="ph">{SILHOUETTE}<span class="soon">Photo coming soon</span><img class="wm" src="assets/img/badge-256.png" alt=""></div>'
     return f"""<article class="pl">{frame}<div class="info"><div class="fn">{e(first)}</div><div class="ln">{e(last)}</div>{tag}{player_sponsor_line(p)}</div></article>"""
@@ -384,7 +426,8 @@ def staff_card(person):
     name, role = person["name"], person["role"]
     photo = photo_src(person)
     if photo:
-        av = f'<div class="av has-photo"><img src="{e(photo)}" alt="" width="640" height="800"></div>'
+        av = (f'<div class="av has-photo"><img src="{e(photo)}" alt="" width="640" height="800">'
+              f'<img class="wm" src="assets/img/badge-256.png" alt=""></div>')
     else:
         av = f'<div class="av">{e(initials(name))}</div>'
     return f'<div class="st">{av}<div><b>{e(name)}</b><span>{e(role)}</span></div></div>'
@@ -503,7 +546,7 @@ contact = f"""
   <a class="contact-row" href="{g['map']}" target="_blank" rel="noopener"><div class="ic">{ICON['pin']}</div><div><small>Ground</small><b>{e(g['name'])}, {e(g['address'])}</b></div></a>
  </div>
  <div class="info-card"><h3>Follow the club</h3>
-  {''.join(f'<a class="contact-row" href="{s["url"]}" target="_blank" rel="noopener"><div class="ic">{ICON[s["name"]]}</div><div><small>{s["name"]}</small><b>{e(s["label"])}</b></div></a>' for s in shown_social())}
+  {''.join(f'<a class="contact-row" href="{s["url"]}" target="_blank" rel="noopener"><div class="ic">{ICON[s["name"]]}</div><div><small>{e(social_contact_label(s))}</small><b>{e(s["label"])}</b></div></a>' for s in shown_social())}
  </div>
 </div>
 <div style="margin-top:28px">{SPONSOR_CTA}</div>
@@ -578,7 +621,7 @@ def social_button(network, label):
 
 
 def first_team_social():
-    buttons = social_button("Instagram", "Follow the first team on Instagram") + social_button("X", "Follow on X")
+    buttons = social_button("Instagram", "Follow the first team on Instagram") + social_button("X", "Follow the first team on X")
     if not buttons:
         return ""
     return f'<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:flex-start">{buttons}</div>'

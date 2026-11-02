@@ -39,11 +39,13 @@
   {
    "name": "Instagram",
    "label": "@eddlewoodfc",
+   "scope": "First team",
    "url": "https://www.instagram.com/eddlewoodfc/"
   },
   {
    "name": "X",
    "label": "@EFC1stTeam",
+   "scope": "First team",
    "url": "https://x.com/EFC1stTeam"
   }
  ],
