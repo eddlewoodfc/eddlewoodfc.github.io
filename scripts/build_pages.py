@@ -6,7 +6,7 @@ import html
 import re
 import json
 from pathlib import Path
-from urllib.parse import quote
+from urllib.parse import quote, urlencode
 
 e = html.escape
 ROOT = Path(__file__).resolve().parent.parent
@@ -262,8 +262,26 @@ def youth_sponsor_listing():
     return "".join(cards)
 
 
+WA_NUMBER = "447747909905"
+WA_TEXT = "Hi, I'd like to enquire about sponsorship at Eddlewood FC"
+WA_URL = f"https://wa.me/{WA_NUMBER}?text={quote(WA_TEXT)}"
+
+
+def sponsorship_href(player="", team="", about=""):
+    """A normal link to the contact page. Phones with no mail app can still copy or use WhatsApp."""
+    params = {}
+    if player:
+        params["player"] = player
+    if team:
+        params["team"] = team
+    if about:
+        params["about"] = about
+    query = ("?" + urlencode(params)) if params else ""
+    return f"contact.html{query}#sponsorship"
+
+
 def sponsor_mailto(team_name):
-    return f"mailto:{EMAIL}?subject={quote(f'Sponsoring the {team_name}')}"
+    return sponsorship_href(team=team_name)
 
 
 def sponsor_placeholder(team_name, show_name=False):
@@ -272,13 +290,67 @@ def sponsor_placeholder(team_name, show_name=False):
 
 
 SPONSOR_CTA = f"""<div class="cta-band"><div><h3>Partner with Eddlewood</h3><p>Interested in sponsoring Eddlewood FC? Get in touch with the club to find out about sponsorship opportunities.</p></div>
-<a class="btn btn-dark" href="mailto:{EMAIL}?subject=Sponsorship%20enquiry">Enquire now</a></div>"""
+<a class="btn btn-dark" href="{sponsorship_href()}">Enquire now</a></div>"""
 
 SPONSOR_PAGE_CTA = f"""<div class="cta-band"><div><h3>Sponsor Eddlewood FC</h3><p>Sponsor the first team, a youth team or the girls' section. Get in touch and we will talk through the options.</p></div>
-<a class="btn btn-dark" href="mailto:{EMAIL}?subject=Sponsorship%20enquiry">Get in touch</a></div>"""
+<a class="btn btn-dark" href="{sponsorship_href()}">Get in touch</a></div>"""
 
 ADVERTISING_CTA = f"""<div class="cta-band" style="margin-top:22px"><div><h3>Advertise at {e(C['ground']['name'])}</h3><p>Advertising is available around {e(C['ground']['name'])}, on pitchside advertising boards. Get your brand in front of players, supporters and the local community at every home game.</p></div>
-<a class="btn btn-dark" href="mailto:{EMAIL}?subject={quote('Advertising at ' + C['ground']['name'])}">Contact the club for details</a></div>"""
+<a class="btn btn-dark" href="{sponsorship_href(about='advertising')}">Contact the club for details</a></div>"""
+
+SPONSORSHIP_SCRIPT = f"""<script>
+(function () {{
+  var email = "{EMAIL}";
+  var btn = document.getElementById("copy-email");
+  var msg = document.getElementById("copy-email-msg");
+  function copied() {{
+    if (msg) msg.hidden = false;
+    if (btn) btn.textContent = "Copied";
+  }}
+  if (btn) btn.addEventListener("click", function () {{
+    function fallback() {{
+      var area = document.createElement("textarea");
+      area.value = email;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      try {{ document.execCommand("copy"); copied(); }} catch (err) {{}}
+      document.body.removeChild(area);
+    }}
+    if (navigator.clipboard && navigator.clipboard.writeText) {{
+      navigator.clipboard.writeText(email).then(copied).catch(fallback);
+    }} else {{
+      fallback();
+    }}
+  }});
+  var params = new URLSearchParams(location.search);
+  var player = params.get("player");
+  var team = params.get("team");
+  var about = params.get("about");
+  var text = "Hi, I'd like to enquire about sponsorship at Eddlewood FC";
+  if (player) text = "Hi, I'd like to enquire about sponsoring " + player + " at Eddlewood FC";
+  else if (team) text = "Hi, I'd like to enquire about sponsoring the " + team + " at Eddlewood FC";
+  else if (about === "advertising") text = "Hi, I'd like to enquire about advertising at Eddlewood Park";
+  var wa = document.getElementById("sponsor-whatsapp");
+  if (wa) wa.href = "https://wa.me/{WA_NUMBER}?text=" + encodeURIComponent(text);
+}})();
+</script>"""
+
+SPONSORSHIP_SECTION = f"""<section id="sponsorship"><div class="wrap">
+ <div class="sec-head"><div><div class="eyebrow">Sponsorship</div><h2>Sponsorship enquiries</h2></div></div>
+ <div class="info-card">
+  <p class="sponsor-email" id="sponsor-email">{e(EMAIL)}</p>
+  <div class="sponsor-actions">
+   <button type="button" class="btn btn-dark" id="copy-email">Copy email</button>
+   <a class="btn btn-red" href="mailto:{EMAIL}?subject=Sponsorship%20enquiry">Email us</a>
+   <a class="btn btn-dark" id="sponsor-whatsapp" href="{WA_URL}" target="_blank" rel="noopener">WhatsApp us</a>
+  </div>
+  <p class="copy-note" id="copy-email-msg" hidden>Copied</p>
+ </div>
+</div></section>
+{SPONSORSHIP_SCRIPT}"""
 
 # ----------------------------------------------------------------- HOME
 home = f"""
@@ -398,7 +470,7 @@ def player_sponsor_line(p):
     elif single or home or away:
         text = f"Sponsored by {e(single or home or away)}"
     else:
-        return (f'<div class="psp"><a href="mailto:{EMAIL}?subject=Player%20sponsorship">'
+        return (f'<div class="psp"><a href="{sponsorship_href(player=p["name"])}">'
                 f"Sponsor this player</a></div>")
     return f'<div class="psp">{text}</div>'
 
@@ -552,6 +624,7 @@ contact = f"""
 <div style="margin-top:28px">{SPONSOR_CTA}</div>
 <p class="note-box" style="margin-top:22px">{e(C['charity'])}</p>
 </div></section>
+{SPONSORSHIP_SECTION}
 """
 
 # ----------------------------------------------------------------- TEAMS

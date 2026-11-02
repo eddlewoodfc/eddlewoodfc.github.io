@@ -22,6 +22,10 @@ h1,h2,h3,h4{font-family:var(--head);text-transform:uppercase;letter-spacing:.01e
 .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}.btn-ghost:hover{background:#fff;color:var(--black)}
 .btn-dark{background:var(--black);color:#fff}.btn-dark:hover{background:var(--red)}
 .btn svg{width:16px;height:16px}
+#sponsorship{scroll-margin-top:96px}
+.sponsor-email{font-size:22px;font-weight:700;margin:0 0 16px;user-select:all}
+.sponsor-actions{display:flex;flex-wrap:wrap;gap:10px}
+.copy-note{margin:12px 0 0;font-weight:700;color:#1c7c3a}
 
 /* ---------- top bar + header ---------- */
 .topbar{background:var(--red);color:#fff;font-size:12px;font-family:var(--head);letter-spacing:.12em;text-transform:uppercase;font-weight:600}
