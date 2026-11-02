@@ -65,7 +65,7 @@ ICON = {
 SILHOUETTE = '<svg viewBox="0 0 200 220" aria-hidden="true"><path d="M100 18c22 0 38 17 38 40s-16 44-38 44-38-21-38-44 16-40 38-40zM22 220c2-46 30-80 78-80s76 34 78 80z"/></svg>'
 
 NAV = [("index.html", "Home"), ("teams.html", "Teams"), ("fixtures.html", "Fixtures &amp; Results"),
-       ("sponsors.html", "Sponsors"), ("visit.html", "Matchday"), ("contact.html", "Contact")]
+       ("sponsors.html", "Sponsors"), ("visit.html", "Matchday"), ("shop.html", "Club Shop"), ("contact.html", "Contact")]
 
 
 def nav_key(fname):
@@ -127,7 +127,7 @@ def footer():
  <div><div class="f-brand"><img src="assets/img/badge-256.png" alt="Eddlewood FC badge"><div><b>Eddlewood<br>Football Club</b><em>{e(C['tagline'])}</em></div></div>
  <p style="margin-top:16px;max-width:360px">{e(C['ground']['name'])}, {e(C['ground']['address'])}</p></div>
  <div><h4>Teams</h4><ul>{''.join(f'<li><a href="{team_page(t)}">{e(t["title"])}</a></li>' for t in TEAMS)}</ul></div>
- <div><h4>Club</h4><ul><li><a href="fixtures.html">Fixtures &amp; results</a></li><li><a href="table.html">League table</a></li><li><a href="squad.html">First-team squad</a></li><li><a href="sponsors.html">Sponsors</a></li><li><a href="visit.html">Matchday</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+ <div><h4>Club</h4><ul><li><a href="fixtures.html">Fixtures &amp; results</a></li><li><a href="table.html">League table</a></li><li><a href="squad.html">First-team squad</a></li><li><a href="sponsors.html">Sponsors</a></li><li><a href="visit.html">Matchday</a></li><li><a href="shop.html">Club shop</a></li><li><a href="contact.html">Contact</a></li></ul></div>
  <div><h4>Follow</h4><ul>{''.join(f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{s["name"]} · {e(s["label"])}</a></li>' for s in shown_social())}</ul></div>
 </div>
 <div class="f-legal"><span>{e(C['charity'])}</span><span>Fixtures, results and tables update automatically from the West of Scotland Football League, CLYFA and Scottish Youth FA websites.</span><span>© <span id="yr">2026</span> Eddlewood FC</span></div>
@@ -367,6 +367,19 @@ squad = f"""
 <section class="bg-grey"><div class="wrap">
  <div class="sec-head"><div><div class="eyebrow">Behind the scenes</div><h2>Backroom staff</h2></div></div>
  <div class="staff">{''.join(f'<div class="st"><div class="av">{e(initials(n))}</div><div><b>{e(n)}</b><span>{e(r)}</span></div></div>' for n, r in C['staff'])}</div>
+</div></section>
+"""
+
+# ----------------------------------------------------------------- SHOP
+shop = f"""
+<section class="page-hero" style="padding:0"><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Official club shop</div><h1>Club Shop – coming soon</h1><p>The official Eddlewood FC online club shop is coming soon, with replica kit and club merchandise for adults and kids.</p></div></section>
+<section><div class="wrap">
+ <div class="news-empty">
+  <img src="assets/img/badge-256.png" alt="Eddlewood FC badge" width="96" height="94">
+  <div><p>Check back, or follow the club on social media for the launch.</p>
+  <div class="soc-row" style="margin-top:16px">{social_links("soc")}</div>
+  <p style="margin-top:18px"><a class="btn btn-red" href="mailto:{EMAIL}?subject=Club%20shop">Get in touch</a></p></div>
+ </div>
 </div></section>
 """
 
@@ -689,6 +702,7 @@ pages = [
  ("sponsors.html", "Sponsors", sponsors, "The sponsors who support Eddlewood FC and its teams.", None),
  ("visit.html", "Matchday", visit, "Visiting Eddlewood Park: address, directions and admission prices.", None),
  ("contact.html", "Contact", contact, "Contact Eddlewood FC.", None),
+ ("shop.html", "Club Shop", shop, "The official Eddlewood FC online club shop is coming soon, with replica kit and club merchandise for adults and kids.", None),
  ("teams.html", "Teams", teams_index, "Eddlewood FC teams: first team, youth teams and girls.", None),
  ("first-team.html", "First Team", first_team, "Eddlewood FC first team: West of Scotland Football League Fourth Division.", None),
 ] + [(team_page(t), t["title"], youth_page(t), f"Eddlewood FC {t['title']}: fixtures, results and how to join.", None) for t in TEAMS if t["group"] != "senior"]
