@@ -362,11 +362,32 @@ def player_sponsor_line(p):
     return f'<div class="psp">{text}</div>'
 
 
+def photo_src(record):
+    """A headshot path only when the file is actually in the repo."""
+    photo = str((record or {}).get("photo") or "").strip()
+    return photo if photo and (ROOT / photo).is_file() else ""
+
+
 def player_card(p):
     first, last = p["name"].split(" ", 1)
     role = p.get("role")
     tag = f'<span class="role{" gk" if role == "Goalkeeper" else ""}">{e(role)}</span>' if role else ""
-    return f"""<article class="pl"><div class="ph">{SILHOUETTE}<span class="soon">Photo coming soon</span><img class="wm" src="assets/img/badge-256.png" alt=""></div><div class="info"><div class="fn">{e(first)}</div><div class="ln">{e(last)}</div>{tag}{player_sponsor_line(p)}</div></article>"""
+    photo = photo_src(p)
+    if photo:
+        frame = f'<div class="ph has-photo"><img class="portrait" src="{e(photo)}" alt="{e(p["name"])}" width="640" height="800"></div>'
+    else:
+        frame = f'<div class="ph">{SILHOUETTE}<span class="soon">Photo coming soon</span><img class="wm" src="assets/img/badge-256.png" alt=""></div>'
+    return f"""<article class="pl">{frame}<div class="info"><div class="fn">{e(first)}</div><div class="ln">{e(last)}</div>{tag}{player_sponsor_line(p)}</div></article>"""
+
+
+def staff_card(person):
+    name, role = person["name"], person["role"]
+    photo = photo_src(person)
+    if photo:
+        av = f'<div class="av has-photo"><img src="{e(photo)}" alt="" width="640" height="800"></div>'
+    else:
+        av = f'<div class="av">{e(initials(name))}</div>'
+    return f'<div class="st">{av}<div><b>{e(name)}</b><span>{e(role)}</span></div></div>'
 
 
 def initials(n):
@@ -378,11 +399,11 @@ squad = f"""
 <section><div class="wrap">
  <div class="sec-head"><div><div class="eyebrow">First team</div><h2>Players</h2></div></div>
  <div class="squad-grid">{''.join(player_card(p) for p in sorted(C['squad'], key=surname_key))}</div>
- <p class="note-box" style="margin-top:22px">Player photos are coming soon. Images shown are placeholders.</p>
+ <p class="note-box" style="margin-top:22px">More player photos are coming soon.</p>
 </div></section>
 <section class="bg-grey"><div class="wrap">
  <div class="sec-head"><div><div class="eyebrow">Behind the scenes</div><h2>Backroom staff</h2></div></div>
- <div class="staff">{''.join(f'<div class="st"><div class="av">{e(initials(n))}</div><div><b>{e(n)}</b><span>{e(r)}</span></div></div>' for n, r in C['staff'])}</div>
+ <div class="staff">{''.join(staff_card(person) for person in C['staff'])}</div>
 </div></section>
 """
 

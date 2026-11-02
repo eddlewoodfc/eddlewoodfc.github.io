@@ -65,11 +65,13 @@
    "sponsor": "Positive Paving & Groundworks"
   },
   {
-   "name": "Bradley Campbell"
+   "name": "Bradley Campbell",
+   "photo": "assets/img/players/bradley-campbell.jpg"
   },
   {
    "name": "Keane Campbell",
-   "sponsor": "Allan Campbell & Sons"
+   "sponsor": "Allan Campbell & Sons",
+   "photo": "assets/img/players/keane-campbell.jpg"
   },
   {
    "name": "Keiran Campbell",
@@ -81,17 +83,20 @@
   },
   {
    "name": "Josh Clark",
-   "sponsor": "Positive Paving & Groundworks"
+   "sponsor": "Positive Paving & Groundworks",
+   "photo": "assets/img/players/josh-clark.jpg"
   },
   {
    "name": "Daniel Collins",
    "sponsor": "CM Roofing & Roughcasting"
   },
   {
-   "name": "Matthew Collins"
+   "name": "Matthew Collins",
+   "photo": "assets/img/players/matthew-collins.jpg"
   },
   {
-   "name": "John Cunningham"
+   "name": "John Cunningham",
+   "photo": "assets/img/players/john-cunningham.jpg"
   },
   {
    "name": "Ronan Gemmell"
@@ -105,7 +110,8 @@
   },
   {
    "name": "Luke Lickrish",
-   "sponsor": "Colin Lickrish"
+   "sponsor": "Colin Lickrish",
+   "photo": "assets/img/players/luke-lickrish.jpg"
   },
   {
    "name": "Alan Lithgow",
@@ -114,11 +120,13 @@
   },
   {
    "name": "Ruan Macrae",
-   "sponsor": "Joe Cunningham"
+   "sponsor": "Joe Cunningham",
+   "photo": "assets/img/players/ruan-macrae.jpg"
   },
   {
    "name": "Rhys McGhie",
-   "sponsor": "Barber Jac The Barber Room @ Nicola Innes"
+   "sponsor": "Barber Jac The Barber Room @ Nicola Innes",
+   "photo": "assets/img/players/rhys-mcghie.jpg"
   },
   {
    "name": "Robbie McGhie",
@@ -134,26 +142,11 @@
   }
  ],
  "staff": [
-  [
-   "Brian McKinven",
-   "Manager"
-  ],
-  [
-   "Paul Burns",
-   "Coach"
-  ],
-  [
-   "Stevie Burr",
-   "Coach"
-  ],
-  [
-   "Kenny Cooper",
-   "Coach"
-  ],
-  [
-   "Darci Burns",
-   "Physio"
-  ]
+  {"name": "Brian McKinven", "role": "Manager", "photo": "assets/img/players/brian-mckinven.jpg"},
+  {"name": "Paul Burns", "role": "Coach"},
+  {"name": "Stevie Burr", "role": "Coach"},
+  {"name": "Kenny Cooper", "role": "Coach", "photo": "assets/img/players/kenny-cooper.jpg"},
+  {"name": "Darci Burns", "role": "Physio"}
  ],
  "sponsors": [
   {
