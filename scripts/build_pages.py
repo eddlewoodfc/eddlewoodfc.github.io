@@ -476,8 +476,8 @@ visit = f"""
 contact = f"""
 <section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/dressing_room.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Get in touch</div><h1>Contact</h1><p>For club, sponsorship and matchday enquiries.</p></div></section>
 <section><div class="wrap"><div class="info-grid">
- <div class="info-card"><h3>Club secretary</h3>
-  <div class="contact-row"><div class="ic">{ICON['user']}</div><div><small>Secretary</small><b>{e(C['contact']['secretary'])}</b></div></div>
+ <div class="info-card"><h3>Club chairman</h3>
+  <div class="contact-row"><div class="ic">{ICON['user']}</div><div><small>Chairman</small><b>{e(C['contact']['chairman'])}</b></div></div>
   <a class="contact-row" href="mailto:{C['contact']['email']}"><div class="ic">{ICON['mail']}</div><div><small>Email</small><b>{e(C['contact']['email'])}</b></div></a>
   <a class="contact-row" href="{g['map']}" target="_blank" rel="noopener"><div class="ic">{ICON['pin']}</div><div><small>Ground</small><b>{e(g['name'])}, {e(g['address'])}</b></div></a>
  </div>
