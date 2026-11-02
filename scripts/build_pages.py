@@ -147,11 +147,13 @@ def sponsor_img(s):
 
 def sponsor_tile(s, force_white=False):
     tile = "light" if force_white else s.get("tile")
-    cls = "sp" + (" dark" if tile == "dark" and not force_white else "") + (" cap" if s.get("caption") else "")
+    word = not s.get("logo")
+    cls = "sp" + (" dark" if tile == "dark" and not force_white else "") + (" cap" if s.get("caption") else "") + (" word" if word else "")
     if s.get("logo"):
         inner = sponsor_img(s) + (f'<span>{e(s["name"])}</span>' if s.get("caption") else "")
     else:
-        inner = f'<span class="txt">{e(s["name"])}</span>'
+        note = f'<span class="sp-note">{e(s["note"])}</span>' if s.get("note") else ""
+        inner = f'<span class="txt">{e(s["name"])}</span>{note}'
     url = str(s.get("url") or "").strip()
     if url:
         return (f'<a class="{cls}" href="{e(url)}" target="_blank" rel="noopener sponsored" '
@@ -189,17 +191,6 @@ def team_sponsor_items(team_id):
     return out
 
 
-def sponsor_listing_label(items):
-    """One line for a team on the sponsors lists. A shared note (kit sponsors) leads the names."""
-    named = [s for s in items if s.get("name")]
-    names = ", ".join(s["name"] for s in named)
-    notes = {s.get("note") for s in named if s.get("note")}
-    if len(notes) == 1 and all(s.get("note") for s in named):
-        note = next(iter(notes))
-        return f"{note} · {names}" if len(named) > 1 else f"{names} · {note}"
-    return names
-
-
 def youth_sponsor_card(unit):
     items = [s for s in team_sponsor_items(unit["id"]) if s.get("name") or s.get("logo")]
     if not items:
@@ -213,7 +204,8 @@ def youth_sponsor_card(unit):
             extra = '<div class="link-grid">' + "".join(
                 f'<div class="info-card"><h3>{e(s["name"])}</h3></div>' for s in texts) + "</div>"
         return f'<div class="youth-sp-block"><a class="more-link" href="{unit["page"]}">{tt(unit["name"])}</a><div class="spons-strip youth">{tiles}</div>{extra}</div>'
-    return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>{e(sponsor_listing_label(items))}</span></a>'
+    tiles = "".join(sponsor_tile(s) for s in texts)
+    return f'<div class="youth-sp-block"><a class="more-link" href="{unit["page"]}">{tt(unit["name"])}</a><div class="spons-strip youth">{tiles}</div></div>'
 
 
 def youth_sponsor_listing():
@@ -629,7 +621,9 @@ def team_sponsors_section(t):
             shared = len(logos) > 1 and all(s.get("note") and s.get("note") == logos[0].get("note") for s in logos)
             label = f'<p class="eyebrow" style="margin-bottom:10px">{e(logos[0]["note"])}</p>' if shared else ""
             shown += label + f'<div class="spons-strip youth">{"".join(sponsor_tile(s) for s in logos)}</div>'
-        if texts:
+        if texts and not logos:
+            shown += f'<div class="spons-strip youth">{"".join(sponsor_tile(s) for s in texts)}</div>'
+        elif texts:
             shared = len(texts) > 1 and all(s.get("note") and s.get("note") == texts[0].get("note") for s in texts)
             cards = []
             for s in texts:

@@ -224,6 +224,9 @@ a.shop-photo:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
 .sp img{max-height:58px;max-width:100%;width:auto;object-fit:contain}
 .sp.dark{background:var(--black);border-color:var(--black)}
 .sp .txt{font-family:var(--head);font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:17px;line-height:1.05;color:var(--ink)}
+.sp.word{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center}
+.sp.word .txt{max-width:16ch}
+.sp.word .sp-note{font-family:var(--body);font-size:12px;font-weight:600;line-height:1.2;letter-spacing:0;text-transform:none;color:var(--mute)}
 a.sp{text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
 a.sp:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(10,10,11,.14)}
 a.sp:focus-visible{outline:3px solid var(--red);outline-offset:2px}
