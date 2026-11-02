@@ -192,6 +192,14 @@ table.lt{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
 .shop-ribbon{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px;padding:5px 9px;border-radius:4px}
 .shop-stock{position:absolute;top:12px;left:12px;background:#1c7c3a;color:#fff;font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px;padding:5px 9px;border-radius:4px}
 .shop-card h3{font-size:26px;padding:14px 16px 16px}
+.shop-card h3:has(+ .shop-sizes){padding-bottom:4px}
+.shop-sizes{margin:0;padding:0 16px 16px;color:var(--mute);font-size:14px}
+.shop-note{margin:14px 0 0;color:var(--mute);font-size:13px}
+.shop-photo.shop-swatch{box-shadow:inset 0 0 0 1px rgba(10,10,11,.12)}
+.shop-photo.shop-swatch.home{background:var(--red)}
+.shop-photo.shop-swatch.away{background:linear-gradient(90deg,#fff 50%,var(--black) 50%)}
+.shop-photo.shop-swatch img{width:46%;height:auto;max-height:62%;object-fit:contain}
+.shop-swatch.home .shop-ribbon{box-shadow:0 0 0 2px #fff}
 .shop-photo-wide{aspect-ratio:983/414}
 a.shop-photo{text-decoration:none;color:inherit;cursor:zoom-in}
 a.shop-photo:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
