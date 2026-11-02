@@ -205,9 +205,14 @@ def youth_sponsor_card(unit):
     if not items:
         return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>Sponsor wanted — get in touch</span></a>'
     logos = [s for s in items if s.get("logo")]
+    texts = [s for s in items if s.get("name") and not s.get("logo")]
     if logos:
         tiles = "".join(sponsor_tile(s) for s in logos)
-        return f'<div class="youth-sp-block"><a class="more-link" href="{unit["page"]}">{tt(unit["name"])}</a><div class="spons-strip youth">{tiles}</div></div>'
+        extra = ""
+        if texts:
+            extra = '<div class="link-grid">' + "".join(
+                f'<div class="info-card"><h3>{e(s["name"])}</h3></div>' for s in texts) + "</div>"
+        return f'<div class="youth-sp-block"><a class="more-link" href="{unit["page"]}">{tt(unit["name"])}</a><div class="spons-strip youth">{tiles}</div>{extra}</div>'
     return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>{e(sponsor_listing_label(items))}</span></a>'
 
 

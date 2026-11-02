@@ -6,7 +6,7 @@
   {"name": "Scullion LIVING", "logo": "assets/img/sponsors/youth/scullion_living.svg", "logo_fallback": "assets/img/sponsors/youth/scullion_living.png", "url": "https://scullionliving.com/", "note": "Kit sponsors"}
  ],
  "2012": [
-  {"name": "Lightbody's", "logo": "", "url": ""},
+  {"name": "Lightbody", "logo": "assets/img/sponsors/youth/lightbody.png", "url": "https://finsburyfoods.co.uk/our-sites/lightbody/"},
   {"name": "Ferguson Decorating", "logo": "", "url": ""}
  ],
  "2013": [{"name": "ECR Surfacing", "logo": "assets/img/sponsors/youth/ecr_surfacing.png", "url": "https://ecrsurfacing.co.uk/"}],
