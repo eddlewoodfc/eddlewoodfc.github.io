@@ -375,6 +375,24 @@ squad = f"""
 shop = f"""
 <section class="page-hero" style="padding:0"><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Official club shop</div><h1>Club Shop – coming soon</h1><p>The official Eddlewood FC online club shop is coming soon, with replica kit and club merchandise for adults and kids.</p></div></section>
 <section><div class="wrap">
+ <div class="sec-head"><div><div class="eyebrow">On sale</div><h2>Available now</h2></div></div>
+ <article class="shop-card shop-available">
+  <a class="shop-photo shop-photo-wide" href="assets/img/shop/pin-badges-poster.webp" target="_blank" rel="noopener" data-poster aria-label="Open the pin badges poster"><img src="assets/img/shop/pin-badge.webp" alt="Eddlewood FC pin badge" width="983" height="414"><span class="shop-stock">In stock</span></a>
+  <div class="shop-body"><h3>Eddlewood FC pin badge</h3><p class="shop-price">£5</p><p>Available to buy at the pavilion on matchdays (card or cash).</p><p><a class="more-link" href="mailto:{EMAIL}?subject=Pin%20badges">Ask about pin badges</a></p></div>
+ </article>
+ <dialog class="shop-lightbox" id="pin-poster"><button type="button" data-close>Close</button><img src="assets/img/shop/pin-badges-poster.webp" alt="Eddlewood FC pin badges for sale"></dialog>
+ <script>
+  (function(){{
+    var link = document.querySelector("[data-poster]");
+    var dialog = document.getElementById("pin-poster");
+    if (!link || !dialog || !dialog.showModal) return;
+    link.addEventListener("click", function(e){{ e.preventDefault(); dialog.showModal(); }});
+    dialog.querySelector("[data-close]").addEventListener("click", function(){{ dialog.close(); }});
+    dialog.addEventListener("click", function(e){{ if (e.target === dialog) dialog.close(); }});
+  }})();
+ </script>
+</div></section>
+<section><div class="wrap">
  <div class="sec-head"><div><div class="eyebrow">Merchandise</div><h2>Coming soon</h2></div></div>
  <div class="shop-grid">
   <article class="shop-card"><div class="shop-photo"><img src="assets/img/shop/bobble-hat.webp" alt="Bobble hat" width="770" height="860"><span class="shop-ribbon">Coming soon</span></div><h3>Bobble hat</h3></article>
