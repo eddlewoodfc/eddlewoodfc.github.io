@@ -188,6 +188,7 @@ table.lt{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
 .shop-grid{display:grid;gap:14px}
 .shop-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
 .shop-photo{position:relative;aspect-ratio:4/5;background:var(--grey);display:grid;place-items:center}
+.shop-photo-white{background:#fff}
 .shop-photo img{width:100%;height:100%;object-fit:contain}
 .shop-ribbon{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px;padding:5px 9px;border-radius:4px}
 .shop-stock{position:absolute;top:12px;left:12px;background:#1c7c3a;color:#fff;font-family:var(--head);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px;padding:5px 9px;border-radius:4px}
