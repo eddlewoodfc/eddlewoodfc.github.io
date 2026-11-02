@@ -200,16 +200,27 @@ def sponsor_listing_label(items):
     return names
 
 
+def youth_sponsor_card(unit):
+    items = [s for s in team_sponsor_items(unit["id"]) if s.get("name") or s.get("logo")]
+    if not items:
+        return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>Sponsor wanted — get in touch</span></a>'
+    logos = [s for s in items if s.get("logo")]
+    if logos:
+        tiles = "".join(sponsor_tile(s) for s in logos)
+        return f'<div class="youth-sp-block"><a class="more-link" href="{unit["page"]}">{tt(unit["name"])}</a><div class="spons-strip youth">{tiles}</div></div>'
+    return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>{e(sponsor_listing_label(items))}</span></a>'
+
+
 def youth_sponsor_listing():
     cards = []
     for t in TEAMS:
         if t["group"] == "senior":
             continue
         for u in youth_sponsor_units(t):
-            items = [s for s in team_sponsor_items(u["id"]) if s.get("name")]
+            items = [s for s in team_sponsor_items(u["id"]) if s.get("name") or s.get("logo")]
             if not items:
                 continue
-            cards.append(f'<a class="link-card" href="{u["page"]}"><b>{tt(u["name"])}</b><span>{e(sponsor_listing_label(items))}</span></a>')
+            cards.append(youth_sponsor_card(u))
     return "".join(cards)
 
 
@@ -350,17 +361,6 @@ squad = f"""
 
 # ----------------------------------------------------------------- SPONSORS
 player_sp = sorted([p for p in C["squad"] if p.get("sponsor")], key=lambda p: p["name"].split()[-1])
-def youth_sponsor_card(unit):
-    items = [s for s in team_sponsor_items(unit["id"]) if s.get("name") or s.get("logo")]
-    if not items:
-        return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>Sponsor wanted — get in touch</span></a>'
-    logos = [s for s in items if s.get("logo")]
-    if logos:
-        tiles = "".join(sponsor_tile(s) for s in logos)
-        return f'<div class="youth-sp-block"><a class="more-link" href="{unit["page"]}">{tt(unit["name"])}</a><div class="spons-strip youth">{tiles}</div></div>'
-    return f'<a class="link-card" href="{unit["page"]}"><b>{tt(unit["name"])}</b><span>{e(sponsor_listing_label(items))}</span></a>'
-
-
 youth_units = [u for t in TEAMS if t["group"] != "senior" for u in youth_sponsor_units(t)]
 sponsors = f"""
 <section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/walkout_mascots.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Thank you</div><h1>Our Sponsors</h1><p>The local businesses who back Eddlewood FC and its teams. Please support them as they support us.</p></div></section>

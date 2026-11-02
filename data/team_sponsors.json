@@ -3,7 +3,7 @@
  "2010": [{"name": "Procast", "logo": "assets/img/sponsors/procast.svg", "url": "https://www.pro-cast.co.uk", "tile": "dark"}],
  "2011": [
   {"name": "Scullion LAW", "logo": "assets/img/sponsors/youth/scullion_law.svg", "logo_fallback": "assets/img/sponsors/youth/scullion_law.png", "url": "https://scullionlaw.com/", "note": "Kit sponsors"},
-  {"name": "Scullion LIVING", "logo": "assets/img/sponsors/youth/scullion_living.svg", "url": "https://scullionliving.com/", "note": "Kit sponsors"}
+  {"name": "Scullion LIVING", "logo": "assets/img/sponsors/youth/scullion_living.svg", "logo_fallback": "assets/img/sponsors/youth/scullion_living.png", "url": "https://scullionliving.com/", "note": "Kit sponsors"}
  ],
  "2012": [{"name": "Lightbody and Ferguson Decorating", "logo": "", "url": ""}],
  "2013": [],
@@ -11,6 +11,6 @@
  "2016-blacks": [],
  "2016-reds": [],
  "2017": [{"name": "Mandy's Lucky Number", "logo": "", "url": "https://www.facebook.com/groups/2520277664871978", "note": "Charity page"}],
- "2020": [{"name": "GM Fencing", "logo": "assets/img/sponsors/youth/gm_fencing.png", "url": "https://www.facebook.com/people/GM-Fencing/100076122780076/"}],
+ "2020": [{"name": "GM Fencing", "logo": "assets/img/sponsors/youth/gm_fencing.jpg", "url": "https://www.facebook.com/people/GM-Fencing/100076122780076/"}],
  "girls": []
 }
