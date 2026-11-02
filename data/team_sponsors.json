@@ -5,9 +5,12 @@
   {"name": "Scullion LAW", "logo": "assets/img/sponsors/youth/scullion_law.svg", "logo_fallback": "assets/img/sponsors/youth/scullion_law.png", "url": "https://scullionlaw.com/", "note": "Kit sponsors"},
   {"name": "Scullion LIVING", "logo": "assets/img/sponsors/youth/scullion_living.svg", "logo_fallback": "assets/img/sponsors/youth/scullion_living.png", "url": "https://scullionliving.com/", "note": "Kit sponsors"}
  ],
- "2012": [{"name": "Lightbody and Ferguson Decorating", "logo": "", "url": ""}],
- "2013": [],
- "2013-reds": [],
+ "2012": [
+  {"name": "Lightbody's", "logo": "", "url": ""},
+  {"name": "Ferguson Decorating", "logo": "", "url": ""}
+ ],
+ "2013": [{"name": "ECR Surfacing", "logo": "assets/img/sponsors/youth/ecr_surfacing.png", "url": "https://ecrsurfacing.co.uk/"}],
+ "2013-reds": [{"name": "ECR Surfacing", "logo": "assets/img/sponsors/youth/ecr_surfacing.png", "url": "https://ecrsurfacing.co.uk/"}],
  "2016-blacks": [],
  "2016-reds": [],
  "2017": [{"name": "Mandy's Lucky Number", "logo": "", "url": "https://www.facebook.com/groups/2520277664871978", "note": "Charity page"}],
