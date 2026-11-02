@@ -230,7 +230,7 @@ def youth_sponsor_listing():
 
 
 def sponsor_mailto(team_name):
-    return f"mailto:{EMAIL}?subject={quote(f'Sponsoring the {team_name} team')}"
+    return f"mailto:{EMAIL}?subject={quote(f'Sponsoring the {team_name}')}"
 
 
 def sponsor_placeholder(team_name, show_name=False):
@@ -239,7 +239,10 @@ def sponsor_placeholder(team_name, show_name=False):
 
 
 SPONSOR_CTA = f"""<div class="cta-band"><div><h3>Partner with Eddlewood</h3><p>Interested in sponsoring Eddlewood FC? Get in touch with the club to find out about sponsorship opportunities.</p></div>
-<a class="btn btn-dark" href="mailto:{C['contact']['email']}?subject=Sponsorship%20enquiry">Enquire now</a></div>"""
+<a class="btn btn-dark" href="mailto:{EMAIL}?subject=Sponsorship%20enquiry">Enquire now</a></div>"""
+
+SPONSOR_PAGE_CTA = f"""<div class="cta-band"><div><h3>Sponsor Eddlewood FC</h3><p>Sponsor the first team, a youth team or the girls' section. Get in touch and we will talk through the options.</p></div>
+<a class="btn btn-dark" href="mailto:{EMAIL}?subject=Sponsorship%20enquiry">Get in touch</a></div>"""
 
 # ----------------------------------------------------------------- HOME
 home = f"""
@@ -381,7 +384,7 @@ sponsors = f"""
  <div class="sec-head"><div><div class="eyebrow">Sponsor wanted</div><h2>Youth &amp; girls' team sponsors</h2></div></div>
  <div class="link-grid">{''.join(youth_sponsor_card(u) for u in youth_units)}</div>
 </div></section>
-<section><div class="wrap">{SPONSOR_CTA}</div></section>
+<section><div class="wrap">{SPONSOR_PAGE_CTA}</div></section>
 """
 
 # ----------------------------------------------------------------- VISIT
