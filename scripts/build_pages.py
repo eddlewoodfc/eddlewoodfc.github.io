@@ -346,12 +346,35 @@ def surname_key(p):
     return (0 if p.get("role") == "Goalkeeper" else 1, parts[-1], parts[0])
 
 
+def _sponsor_name(value):
+    return value.strip() if isinstance(value, str) else ""
+
+
+def player_sponsor_line(p):
+    """One line under the player. Home and away are shown only when both are recorded."""
+    raw = p.get("sponsor")
+    home = _sponsor_name(p.get("home_sponsor"))
+    away = _sponsor_name(p.get("away_sponsor"))
+    if isinstance(raw, dict):
+        home = home or _sponsor_name(raw.get("home"))
+        away = away or _sponsor_name(raw.get("away"))
+        raw = ""
+    single = _sponsor_name(raw)
+    if home and away:
+        text = f"Home: {e(home)} · Away: {e(away)}"
+    elif single or home or away:
+        text = f"Sponsored by {e(single or home or away)}"
+    else:
+        return (f'<div class="psp"><a href="mailto:{EMAIL}?subject=Player%20sponsorship">'
+                f"Sponsor this player</a></div>")
+    return f'<div class="psp">{text}</div>'
+
+
 def player_card(p):
     first, last = p["name"].split(" ", 1)
     role = p.get("role")
     tag = f'<span class="role{" gk" if role == "Goalkeeper" else ""}">{e(role)}</span>' if role else ""
-    sp = f'<div class="psp">Sponsored by {e(p["sponsor"])}</div>' if p.get("sponsor") else ""
-    return f"""<article class="pl"><div class="ph">{SILHOUETTE}<span class="soon">Photo coming soon</span><img class="wm" src="assets/img/badge-256.png" alt=""></div><div class="info"><div class="fn">{e(first)}</div><div class="ln">{e(last)}</div>{tag}{sp}</div></article>"""
+    return f"""<article class="pl"><div class="ph">{SILHOUETTE}<span class="soon">Photo coming soon</span><img class="wm" src="assets/img/badge-256.png" alt=""></div><div class="info"><div class="fn">{e(first)}</div><div class="ln">{e(last)}</div>{tag}{player_sponsor_line(p)}</div></article>"""
 
 
 def initials(n):
@@ -421,7 +444,6 @@ shop = f"""
 """
 
 # ----------------------------------------------------------------- SPONSORS
-player_sp = sorted([p for p in C["squad"] if p.get("sponsor")], key=lambda p: p["name"].split()[-1])
 youth_units = [u for t in TEAMS if t["group"] != "senior" for u in youth_sponsor_units(t)]
 sponsors = f"""
 <section class="page-hero" style="padding:0"><div class="hero-bg" style="background-image:url('assets/img/photos/walkout_mascots.jpg')"></div><div class="wrap"><div class="eyebrow" style="color:#ff98a6">Thank you</div><h1>Our Sponsors</h1><p>The local businesses who back Eddlewood FC and its teams. Please support them as they support us.</p></div></section>
@@ -430,10 +452,6 @@ sponsors = f"""
  <div class="spons-strip spons-big">{''.join(sponsor_tile(s) for s in C['sponsors'])}</div>
 </div></section>
 <section class="bg-grey"><div class="wrap">
- <div class="sec-head"><div><div class="eyebrow">2026/27</div><h2>Player sponsors</h2></div></div>
- <div class="ps-list">{''.join(f'<div class="ps"><b>{e(p["name"])}</b><span>{e(p["sponsor"])}</span></div>' for p in player_sp)}</div>
-</div></section>
-<section><div class="wrap">
  <div class="sec-head"><div><div class="eyebrow">Sponsor wanted</div><h2>Youth &amp; girls' team sponsors</h2></div></div>
  <div class="link-grid">{''.join(youth_sponsor_card(u) for u in youth_units)}</div>
 </div></section>

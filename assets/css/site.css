@@ -262,6 +262,8 @@ a.info-card:hover{transform:translateY(-3px)}
 .pl .role{display:inline-block;margin-top:8px;font-family:var(--head);font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:.1em;background:var(--red);color:#fff;padding:3px 8px;border-radius:4px}
 .pl .role.gk{background:var(--black)}
 .pl .psp{font-size:12px;color:var(--mute);margin-top:8px;line-height:1.35}
+.pl .psp a{color:var(--red);font-weight:700;text-decoration:none}
+.pl .psp a:hover{text-decoration:underline}
 .staff{display:grid;gap:10px}
 .st{display:flex;align-items:center;gap:14px;background:#fff;border-radius:12px;padding:14px;box-shadow:var(--shadow)}
 .st .av{width:52px;height:52px;border-radius:50%;background:var(--black);display:grid;place-items:center;flex:none;color:#fff;font-family:var(--head);font-weight:800;font-size:19px;box-shadow:inset 0 0 0 3px var(--red)}
