@@ -474,8 +474,8 @@ shop = f"""
 <section><div class="wrap">
  <div class="sec-head"><div><div class="eyebrow">Merchandise</div><h2>Coming soon</h2></div></div>
  <div class="shop-grid">
-  <article class="shop-card"><div class="shop-photo shop-swatch home"><img src="assets/img/badge-256.png" alt="" width="256" height="252"><span class="shop-ribbon">Coming soon</span></div><h3>Home shirt (Joma)</h3><p class="shop-sizes">Adults and kids sizes</p></article>
-  <article class="shop-card"><div class="shop-photo shop-swatch away"><img src="assets/img/badge-256.png" alt="" width="256" height="252"><span class="shop-ribbon">Coming soon</span></div><h3>Away shirt (Joma)</h3><p class="shop-sizes">Adults and kids sizes</p></article>
+  <article class="shop-card"><div class="shop-photo"><img src="assets/img/shop/home-top.jpg" alt="Eddlewood FC 2026/27 Joma home top" width="800" height="1000"><span class="shop-ribbon">Coming soon</span></div><h3>Home shirt (Joma)</h3><p class="shop-sizes">Adults and kids sizes</p></article>
+  <article class="shop-card"><div class="shop-photo"><img src="assets/img/shop/away-top.jpg" alt="Eddlewood FC 2026/27 Joma away top" width="800" height="1000"><span class="shop-ribbon">Coming soon</span></div><h3>Away shirt (Joma)</h3><p class="shop-sizes">Adults and kids sizes</p></article>
   <article class="shop-card"><div class="shop-photo"><img src="assets/img/shop/bobble-hat.webp" alt="Bobble hat" width="770" height="860"><span class="shop-ribbon">Coming soon</span></div><h3>Bobble hat</h3></article>
   <article class="shop-card"><div class="shop-photo"><img src="assets/img/shop/stadium-scarf.webp" alt="Stadium scarf" width="770" height="900"><span class="shop-ribbon">Coming soon</span></div><h3>Stadium scarf</h3></article>
   <article class="shop-card"><div class="shop-photo"><img src="assets/img/shop/beanie.webp" alt="Beanie" width="800" height="869"><span class="shop-ribbon">Coming soon</span></div><h3>Beanie</h3></article>
