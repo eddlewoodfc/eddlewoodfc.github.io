@@ -244,6 +244,9 @@ SPONSOR_CTA = f"""<div class="cta-band"><div><h3>Partner with Eddlewood</h3><p>I
 SPONSOR_PAGE_CTA = f"""<div class="cta-band"><div><h3>Sponsor Eddlewood FC</h3><p>Sponsor the first team, a youth team or the girls' section. Get in touch and we will talk through the options.</p></div>
 <a class="btn btn-dark" href="mailto:{EMAIL}?subject=Sponsorship%20enquiry">Get in touch</a></div>"""
 
+ADVERTISING_CTA = f"""<div class="cta-band" style="margin-top:22px"><div><h3>Advertise at {e(C['ground']['name'])}</h3><p>Advertising is available around {e(C['ground']['name'])}, on pitchside advertising boards. Get your brand in front of players, supporters and the local community at every home game.</p></div>
+<a class="btn btn-dark" href="mailto:{EMAIL}?subject={quote('Advertising at ' + C['ground']['name'])}">Contact the club for details</a></div>"""
+
 # ----------------------------------------------------------------- HOME
 home = f"""
 <section class="hero" style="padding:0">
@@ -384,7 +387,7 @@ sponsors = f"""
  <div class="sec-head"><div><div class="eyebrow">Sponsor wanted</div><h2>Youth &amp; girls' team sponsors</h2></div></div>
  <div class="link-grid">{''.join(youth_sponsor_card(u) for u in youth_units)}</div>
 </div></section>
-<section><div class="wrap">{SPONSOR_PAGE_CTA}</div></section>
+<section><div class="wrap">{SPONSOR_PAGE_CTA}{ADVERTISING_CTA}</div></section>
 """
 
 # ----------------------------------------------------------------- VISIT
