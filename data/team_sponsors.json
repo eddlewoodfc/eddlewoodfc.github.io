@@ -3,7 +3,7 @@
  "2010": [{"name": "Procast", "logo": "assets/img/sponsors/procast.svg", "url": "https://www.pro-cast.co.uk", "tile": "dark"}],
  "2011": [
   {"name": "Scullion LAW", "logo": "assets/img/sponsors/youth/scullion_law.svg", "logo_fallback": "assets/img/sponsors/youth/scullion_law.png", "url": "https://scullionlaw.com/", "note": "Kit sponsors"},
-  {"name": "Scullion LIVING", "logo": "assets/img/sponsors/youth/scullion_living.svg", "logo_fallback": "assets/img/sponsors/youth/scullion_living.png", "url": "https://scullionliving.com/", "note": "Kit sponsors"}
+  {"name": "Scullion LIVING", "logo": "assets/img/sponsors/youth/scullion_living.png", "url": "https://scullionliving.com/", "note": "Kit sponsors"}
  ],
  "2012": [
   {"name": "Lightbody", "logo": "assets/img/sponsors/youth/lightbody.png", "url": "https://finsburyfoods.co.uk/our-sites/lightbody/"},
