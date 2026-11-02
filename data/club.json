@@ -52,12 +52,14 @@
  "squad": [
   {
    "name": "Andrew Docherty",
-   "sponsor": "Oliver Integrated"
+   "sponsor": "Oliver Integrated",
+   "photo": "assets/img/players/andrew-docherty.jpg"
   },
   {
    "name": "Ben Brownlie",
    "role": "Goalkeeper",
-   "sponsor": "David Brownlie"
+   "sponsor": "David Brownlie",
+   "photo": "assets/img/players/ben-brownlie.jpg"
   },
   {
    "name": "Gary Brown"
@@ -77,7 +79,8 @@
   },
   {
    "name": "Keiran Campbell",
-   "sponsor": "Allan Campbell & Sons"
+   "sponsor": "Allan Campbell & Sons",
+   "photo": "assets/img/players/keiran-campbell.jpg"
   },
   {
    "name": "Ryan Campbell",
@@ -90,7 +93,8 @@
   },
   {
    "name": "Daniel Collins",
-   "sponsor": "CM Roofing & Roughcasting"
+   "sponsor": "CM Roofing & Roughcasting",
+   "photo": "assets/img/players/daniel-collins.jpg"
   },
   {
    "name": "Matthew Collins",
@@ -105,10 +109,12 @@
   },
   {
    "name": "Reece Hooper",
-   "sponsor": "LD Balloon Studio & Morgan Hooper"
+   "sponsor": "LD Balloon Studio & Morgan Hooper",
+   "photo": "assets/img/players/reece-hooper.jpg"
   },
   {
-   "name": "Craig Kerr"
+   "name": "Craig Kerr",
+   "photo": "assets/img/players/craig-kerr.jpg"
   },
   {
    "name": "Luke Lickrish",
@@ -118,7 +124,8 @@
   {
    "name": "Alan Lithgow",
    "role": "Captain",
-   "sponsor": "Ryan Campbell"
+   "sponsor": "Ryan Campbell",
+   "photo": "assets/img/players/alan-lithgow.jpg"
   },
   {
    "name": "Ruan Macrae",
@@ -140,15 +147,17 @@
   },
   {
    "name": "Nicholas Moore",
-   "sponsor": "Ryan Burns Plastering & Roughcasting"
+   "sponsor": "Ryan Burns Plastering & Roughcasting",
+   "photo": "assets/img/players/nicholas-moore.jpg"
   }
  ],
  "staff": [
   {"name": "Brian McKinven", "role": "Manager", "photo": "assets/img/players/brian-mckinven.jpg"},
-  {"name": "Paul Burns", "role": "Coach"},
-  {"name": "Stevie Burr", "role": "Coach"},
+  {"name": "Paul Burns", "role": "Coach", "photo": "assets/img/players/paul-burns.jpg"},
+  {"name": "Stevie Burr", "role": "Coach", "photo": "assets/img/players/stevie-burr.jpg"},
   {"name": "Kenny Cooper", "role": "Coach", "photo": "assets/img/players/kenny-cooper.jpg"},
-  {"name": "Darci Burns", "role": "Physio"}
+  {"name": "Darci Burns", "role": "Physio"},
+  {"name": "Nicky Moore", "role": "Player-coach", "photo": "assets/img/players/nicholas-moore.jpg"}
  ],
  "sponsors": [
   {
