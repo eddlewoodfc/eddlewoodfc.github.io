@@ -797,12 +797,12 @@
    "fixtures": [
     {
      "date": "2026-11-07",
-     "time": null,
-     "kickoff": "2026-11-07T12:00:00+00:00",
+     "time": "09:00",
+     "kickoff": "2026-11-07T09:00:00+00:00",
      "home": "17s - Motherwell Phoenix Blacks",
      "away": "17s - Eddlewood FC",
      "competition": "2017 Challenge Division 3",
-     "venue": "Our Lady's High School",
+     "venue": "Daisy Park Community Centre",
      "url": "https://clyfa.leaguerepublic.com/match/45561095.html"
     },
     {
@@ -820,7 +820,13 @@
    "scores_published": false
   }
  },
- "checked_at": "2026-11-01T21:48:39+00:00",
- "updated_at": "2026-11-01T21:48:39+00:00",
- "warnings": []
+ "checked_at": "2026-11-03T10:09:43+00:00",
+ "updated_at": "2026-11-03T10:09:43+00:00",
+ "warnings": [
+  "2010: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1189",
+  "2011: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1192",
+  "2012: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1194",
+  "2013: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1200",
+  "2013-reds: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1201"
+ ]
 }
