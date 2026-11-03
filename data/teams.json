@@ -814,14 +814,24 @@
      "competition": "2017 Challenge Division 3",
      "venue": "7s - Jock Stein Pitch 3",
      "url": "https://clyfa.leaguerepublic.com/match/45601326.html"
+    },
+    {
+     "date": "2026-11-21",
+     "time": "10:00",
+     "kickoff": "2026-11-21T10:00:00+00:00",
+     "home": "17s - Eddlewood FC",
+     "away": "17s - Motherwell Phoenix Blacks",
+     "competition": "2017 Challenge Division 3",
+     "venue": "7s - Jock Stein Pitch 3",
+     "url": "https://clyfa.leaguerepublic.com/match/45630089.html"
     }
    ],
    "results": [],
    "scores_published": false
   }
  },
- "checked_at": "2026-11-03T10:09:43+00:00",
- "updated_at": "2026-11-03T10:09:43+00:00",
+ "checked_at": "2026-11-03T16:06:54+00:00",
+ "updated_at": "2026-11-03T16:06:54+00:00",
  "warnings": [
   "2010: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1189",
   "2011: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1192",
