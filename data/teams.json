@@ -748,6 +748,16 @@
      "competition": "2016 High Intermediate",
      "venue": "7s - Jock Stein Pitch 1",
      "url": "https://clyfa.leaguerepublic.com/match/45607285.html"
+    },
+    {
+     "date": "2026-11-14",
+     "time": "10:00",
+     "kickoff": "2026-11-14T10:00:00+00:00",
+     "home": "16s - Calderbraes Blues",
+     "away": "16s - Eddlewood Blacks",
+     "competition": "2016 High Intermediate",
+     "venue": "7s - Whitemoss (John Wright SC) Pitch 2",
+     "url": "https://clyfa.leaguerepublic.com/match/45643281.html"
     }
    ],
    "results": [],
@@ -776,6 +786,16 @@
      "competition": "2016 High Intermediate",
      "venue": "Airdrie Leisure Centre Gartcairn Pitch",
      "url": "https://clyfa.leaguerepublic.com/match/45607281.html"
+    },
+    {
+     "date": "2026-11-14",
+     "time": null,
+     "kickoff": "2026-11-14T12:00:00+00:00",
+     "home": "16s - Young Pumas Whites",
+     "away": "16s - Eddlewood Reds",
+     "competition": "2016 High Intermediate",
+     "venue": "St Andrews High School",
+     "url": "https://clyfa.leaguerepublic.com/match/45643277.html"
     }
    ],
    "results": [],
@@ -840,8 +860,8 @@
    "scores_published": false
   }
  },
- "checked_at": "2026-11-04T10:22:17+00:00",
- "updated_at": "2026-11-04T10:22:17+00:00",
+ "checked_at": "2026-11-06T13:25:26+00:00",
+ "updated_at": "2026-11-06T13:25:26+00:00",
  "warnings": [
   "2010: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1189",
   "2011: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1192",
