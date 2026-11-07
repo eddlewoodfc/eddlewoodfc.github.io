@@ -180,9 +180,7 @@
    "url": "https://www.wosfl.co.uk/match/44265977.html",
    "home_score": 5,
    "away_score": 1
-  }
- ],
- "fixtures": [
+  },
   {
    "date": "2026-11-07",
    "time": "14:00",
@@ -190,11 +188,13 @@
    "home": "Rossvale",
    "away": "Eddlewood",
    "competition": "Fourth Division",
-   "venue": "Huntershill",
+   "venue": null,
    "url": "https://www.wosfl.co.uk/match/44265973.html",
-   "venue_address": "35 Auchinairn Rd, Bishopbriggs, G64 1RU",
-   "map": "https://www.google.com/maps/search/?api=1&query=35+Auchinairn+Rd%2C+Bishopbriggs%2C+G64+1RU"
-  },
+   "home_score": 0,
+   "away_score": 13
+  }
+ ],
+ "fixtures": [
   {
    "date": "2026-11-14",
    "time": "13:30",
@@ -441,6 +441,18 @@
   "rows": [
    {
     "pos": 1,
+    "team": "Eddlewood",
+    "p": 9,
+    "w": 7,
+    "d": 0,
+    "l": 2,
+    "f": 40,
+    "a": 11,
+    "gd": 29,
+    "pts": 21
+   },
+   {
+    "pos": 2,
     "team": "Castlemilk",
     "p": 9,
     "w": 6,
@@ -450,18 +462,6 @@
     "a": 13,
     "gd": 20,
     "pts": 20
-   },
-   {
-    "pos": 2,
-    "team": "Eddlewood",
-    "p": 8,
-    "w": 6,
-    "d": 0,
-    "l": 2,
-    "f": 27,
-    "a": 11,
-    "gd": 16,
-    "pts": 18
    },
    {
     "pos": 3,
@@ -489,6 +489,18 @@
    },
    {
     "pos": 5,
+    "team": "Annbank United",
+    "p": 10,
+    "w": 4,
+    "d": 1,
+    "l": 5,
+    "f": 22,
+    "a": 21,
+    "gd": 1,
+    "pts": 13
+   },
+   {
+    "pos": 6,
     "team": "Wishaw",
     "p": 8,
     "w": 3,
@@ -500,39 +512,27 @@
     "pts": 10
    },
    {
-    "pos": 6,
-    "team": "Annbank United",
-    "p": 9,
-    "w": 3,
-    "d": 1,
-    "l": 5,
-    "f": 20,
-    "a": 20,
-    "gd": 0,
-    "pts": 10
-   },
-   {
     "pos": 7,
     "team": "Rossvale",
-    "p": 7,
+    "p": 8,
     "w": 2,
     "d": 0,
-    "l": 5,
+    "l": 6,
     "f": 9,
-    "a": 28,
-    "gd": -19,
+    "a": 41,
+    "gd": -32,
     "pts": 6
    },
    {
     "pos": 8,
     "team": "Campbeltown Pupils",
-    "p": 9,
+    "p": 10,
     "w": 1,
     "d": 0,
-    "l": 8,
-    "f": 9,
-    "a": 38,
-    "gd": -29,
+    "l": 9,
+    "f": 10,
+    "a": 40,
+    "gd": -30,
     "pts": 3
    }
   ],
@@ -552,7 +552,7 @@
   "name": "West of Scotland Football League",
   "url": "https://www.wosfl.co.uk/team/236635540/56981581.html"
  },
- "checked_at": "2026-11-06T13:22:06+00:00",
- "updated_at": "2026-10-31T19:39:27+00:00",
+ "checked_at": "2026-11-07T17:00:54+00:00",
+ "updated_at": "2026-11-07T17:00:54+00:00",
  "warnings": []
 }
