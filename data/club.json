@@ -63,7 +63,8 @@
   },
   {
    "name": "Ajay Campbell",
-   "sponsor": "Positive Paving & Groundworks"
+   "sponsor": "Positive Paving & Groundworks",
+   "photo": "assets/img/players/ajay-campbell.jpg"
   },
   {
    "name": "Bradley Campbell",
@@ -81,7 +82,8 @@
   },
   {
    "name": "Ryan Campbell",
-   "sponsor": "Allan Campbell & Sons"
+   "sponsor": "Allan Campbell & Sons",
+   "photo": "assets/img/players/ryan-campbell.jpg"
   },
   {
    "name": "Josh Clark",
@@ -142,7 +144,8 @@
   },
   {
    "name": "Cameron Mellor",
-   "sponsor": "Aldo@G4Claims"
+   "sponsor": "Aldo@G4Claims",
+   "photo": "assets/img/players/cameron-mellor.jpg"
   },
   {
    "name": "Nicholas Moore",
@@ -155,7 +158,7 @@
   {"name": "Paul Burns", "role": "Coach", "photo": "assets/img/players/paul-burns.jpg"},
   {"name": "Stevie Burr", "role": "Coach", "photo": "assets/img/players/stevie-burr.jpg"},
   {"name": "Kenny Cooper", "role": "Coach", "photo": "assets/img/players/kenny-cooper.jpg"},
-  {"name": "Darci Burns", "role": "Physio"},
+  {"name": "Darci Burns", "role": "Physio", "photo": "assets/img/players/darci-burns.jpg"},
   {"name": "Nicky Moore", "role": "Player-coach", "photo": "assets/img/players/nicholas-moore.jpg"}
  ],
  "sponsors": [
