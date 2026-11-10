@@ -105,7 +105,8 @@
   },
   {
    "name": "Ronan Gemmell",
-   "role": "Goalkeeper"
+   "role": "Goalkeeper",
+   "photo": "assets/img/players/ronan-gemmell.jpg"
   },
   {
    "name": "Reece Hooper",
@@ -164,7 +165,8 @@
   },
   {
    "name": "Connor Neilson",
-   "role": "Defender"
+   "role": "Defender",
+   "photo": "assets/img/players/connor-neilson.jpg"
   },
   {
    "name": "David Thomson",
