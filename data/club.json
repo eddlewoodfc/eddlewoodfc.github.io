@@ -117,6 +117,11 @@
    "photo": "assets/img/players/craig-kerr.jpg"
   },
   {
+   "name": "Stefan Law",
+   "role": "Midfielder",
+   "photo": "assets/img/players/stefan-law.jpg"
+  },
+  {
    "name": "Luke Lickrish",
    "sponsor": "Colin Lickrish",
    "photo": "assets/img/players/luke-lickrish.jpg"
@@ -126,6 +131,11 @@
    "role": "Captain",
    "sponsor": "Ryan Campbell",
    "photo": "assets/img/players/alan-lithgow.jpg"
+  },
+  {
+   "name": "Josh MacDonald",
+   "role": "Midfielder",
+   "photo": "assets/img/players/josh-macdonald.jpg"
   },
   {
    "name": "Ruan Macrae",
@@ -151,6 +161,15 @@
    "name": "Nicholas Moore",
    "sponsor": "Ryan Burns Plastering & Roughcasting",
    "photo": "assets/img/players/nicholas-moore.jpg"
+  },
+  {
+   "name": "Connor Neilson",
+   "role": "Defender"
+  },
+  {
+   "name": "David Thomson",
+   "role": "Goalkeeper",
+   "photo": "assets/img/players/david-thomson.jpg"
   }
  ],
  "staff": [
