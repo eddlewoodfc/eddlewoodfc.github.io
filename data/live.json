@@ -489,6 +489,18 @@
    },
    {
     "pos": 5,
+    "team": "Wishaw",
+    "p": 9,
+    "w": 4,
+    "d": 1,
+    "l": 4,
+    "f": 25,
+    "a": 24,
+    "gd": 1,
+    "pts": 13
+   },
+   {
+    "pos": 6,
     "team": "Annbank United",
     "p": 10,
     "w": 4,
@@ -498,18 +510,6 @@
     "a": 21,
     "gd": 1,
     "pts": 13
-   },
-   {
-    "pos": 6,
-    "team": "Wishaw",
-    "p": 8,
-    "w": 3,
-    "d": 1,
-    "l": 4,
-    "f": 22,
-    "a": 22,
-    "gd": 0,
-    "pts": 10
    },
    {
     "pos": 7,
@@ -526,13 +526,13 @@
    {
     "pos": 8,
     "team": "Campbeltown Pupils",
-    "p": 10,
+    "p": 11,
     "w": 1,
     "d": 0,
-    "l": 9,
-    "f": 10,
-    "a": 40,
-    "gd": -30,
+    "l": 10,
+    "f": 12,
+    "a": 43,
+    "gd": -31,
     "pts": 3
    }
   ],
@@ -552,7 +552,7 @@
   "name": "West of Scotland Football League",
   "url": "https://www.wosfl.co.uk/team/236635540/56981581.html"
  },
- "checked_at": "2026-11-14T15:27:18+00:00",
- "updated_at": "2026-11-14T15:27:18+00:00",
+ "checked_at": "2026-11-14T15:52:38+00:00",
+ "updated_at": "2026-11-14T15:52:38+00:00",
  "warnings": []
 }
