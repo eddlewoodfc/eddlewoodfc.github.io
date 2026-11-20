@@ -748,6 +748,16 @@
      "competition": "2016 High Intermediate",
      "venue": "7s - Whitemoss (John Wright SC) Pitch 2",
      "url": "https://clyfa.leaguerepublic.com/match/45682792.html"
+    },
+    {
+     "date": "2026-11-28",
+     "time": "09:00",
+     "kickoff": "2026-11-28T09:00:00+00:00",
+     "home": "16s - Blantyre Victoria Blues",
+     "away": "16s - Eddlewood Blacks",
+     "competition": "2016 High Intermediate",
+     "venue": "7s - Jock Stein Pitch 1",
+     "url": "https://clyfa.leaguerepublic.com/match/45746671.html"
     }
    ],
    "results": [],
@@ -776,6 +786,16 @@
      "competition": "2016 High Intermediate",
      "venue": "7s - Whitemoss (John Wright SC) Pitch 1",
      "url": "https://clyfa.leaguerepublic.com/match/45682791.html"
+    },
+    {
+     "date": "2026-11-28",
+     "time": "09:00",
+     "kickoff": "2026-11-28T09:00:00+00:00",
+     "home": "16s - Eddlewood Reds",
+     "away": "16s - Yett Farm Red",
+     "competition": "2016 High Intermediate",
+     "venue": "7s - Jock Stein Pitch 2",
+     "url": "https://clyfa.leaguerepublic.com/match/45746672.html"
     }
    ],
    "results": [],
@@ -810,8 +830,8 @@
    "scores_published": false
   }
  },
- "checked_at": "2026-11-20T13:31:42+00:00",
- "updated_at": "2026-11-20T13:31:42+00:00",
+ "checked_at": "2026-11-20T16:14:03+00:00",
+ "updated_at": "2026-11-20T16:14:03+00:00",
  "warnings": [
   "2010: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1189",
   "2011: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1192",
