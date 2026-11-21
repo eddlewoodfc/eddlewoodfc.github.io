@@ -204,9 +204,7 @@
    "url": "https://www.wosfl.co.uk/match/45499236.html",
    "home_score": 0,
    "away_score": 2
-  }
- ],
- "fixtures": [
+  },
   {
    "date": "2026-11-21",
    "time": "13:30",
@@ -214,11 +212,13 @@
    "home": "Annbank United",
    "away": "Eddlewood",
    "competition": "Fourth Division",
-   "venue": "New Pebble Park",
+   "venue": null,
    "url": "https://www.wosfl.co.uk/match/44265943.html",
-   "venue_address": null,
-   "map": "https://www.google.com/maps/search/?api=1&query=New+Pebble+Park%2C+Annbank+United+FC"
-  },
+   "home_score": 2,
+   "away_score": 1
+  }
+ ],
+ "fixtures": [
   {
    "date": "2026-11-28",
    "time": "14:00",
@@ -442,13 +442,13 @@
    {
     "pos": 1,
     "team": "Eddlewood",
-    "p": 9,
+    "p": 10,
     "w": 7,
     "d": 0,
-    "l": 2,
-    "f": 40,
-    "a": 11,
-    "gd": 29,
+    "l": 3,
+    "f": 41,
+    "a": 13,
+    "gd": 28,
     "pts": 21
    },
    {
@@ -477,6 +477,18 @@
    },
    {
     "pos": 4,
+    "team": "Annbank United",
+    "p": 11,
+    "w": 5,
+    "d": 1,
+    "l": 5,
+    "f": 24,
+    "a": 22,
+    "gd": 2,
+    "pts": 16
+   },
+   {
+    "pos": 5,
     "team": "St. Patrick's FP",
     "p": 9,
     "w": 5,
@@ -488,7 +500,7 @@
     "pts": 15
    },
    {
-    "pos": 5,
+    "pos": 6,
     "team": "Wishaw",
     "p": 9,
     "w": 4,
@@ -496,18 +508,6 @@
     "l": 4,
     "f": 25,
     "a": 24,
-    "gd": 1,
-    "pts": 13
-   },
-   {
-    "pos": 6,
-    "team": "Annbank United",
-    "p": 10,
-    "w": 4,
-    "d": 1,
-    "l": 5,
-    "f": 22,
-    "a": 21,
     "gd": 1,
     "pts": 13
    },
@@ -553,7 +553,7 @@
   "name": "West of Scotland Football League",
   "url": "https://www.wosfl.co.uk/team/236635540/56981581.html"
  },
- "checked_at": "2026-11-20T16:10:44+00:00",
- "updated_at": "2026-11-20T10:20:21+00:00",
+ "checked_at": "2026-11-21T16:34:49+00:00",
+ "updated_at": "2026-11-21T16:34:49+00:00",
  "warnings": []
 }
