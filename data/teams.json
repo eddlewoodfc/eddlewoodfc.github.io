@@ -23,11 +23,11 @@
      {
       "pos": 1,
       "team": "Carluke Thistle",
-      "p": 3,
+      "p": 4,
       "w": 3,
-      "d": 0,
+      "d": 1,
       "l": 0,
-      "pts": 9
+      "pts": 10
      },
      {
       "pos": 2,
@@ -59,46 +59,46 @@
      {
       "pos": 5,
       "team": "Eddlewood FC (2010)",
-      "p": 2,
+      "p": 3,
       "w": 1,
-      "d": 0,
+      "d": 1,
       "l": 1,
-      "pts": 3
+      "pts": 4
      },
      {
       "pos": 6,
-      "team": "Royal Albert FC (2010)",
-      "p": 2,
+      "team": "Ekfc red 2010",
+      "p": 3,
       "w": 1,
       "d": 0,
-      "l": 1,
+      "l": 2,
       "pts": 3
      },
      {
       "pos": 7,
-      "team": "Westend Utd",
-      "p": 1,
-      "w": 0,
+      "team": "Royal Albert FC (2010)",
+      "p": 3,
+      "w": 1,
       "d": 0,
-      "l": 1,
-      "pts": 0
+      "l": 2,
+      "pts": 3
      },
      {
       "pos": 8,
-      "team": "Ekfc red 2010",
-      "p": 2,
+      "team": "Westend Utd",
+      "p": 0,
       "w": 0,
       "d": 0,
-      "l": 2,
+      "l": 0,
       "pts": 0
      },
      {
       "pos": 9,
       "team": "Cambuslang Rangers (2010)",
-      "p": 3,
+      "p": 4,
       "w": 0,
       "d": 0,
-      "l": 3,
+      "l": 4,
       "pts": 0
      }
     ],
@@ -167,7 +167,34 @@
     "rows": [
      {
       "pos": 1,
+      "team": "Greengairs 2011 Phoenix",
+      "p": 6,
+      "w": 4,
+      "d": 0,
+      "l": 2,
+      "pts": 12
+     },
+     {
+      "pos": 2,
       "team": "EKRR 2011",
+      "p": 5,
+      "w": 3,
+      "d": 1,
+      "l": 1,
+      "pts": 10
+     },
+     {
+      "pos": 3,
+      "team": "Albion Rovers Community Club Yellow (2011)",
+      "p": 5,
+      "w": 3,
+      "d": 0,
+      "l": 2,
+      "pts": 9
+     },
+     {
+      "pos": 4,
+      "team": "Blantyre Soccer Academy 2011 Yellow",
       "p": 4,
       "w": 2,
       "d": 1,
@@ -175,35 +202,8 @@
       "pts": 7
      },
      {
-      "pos": 2,
-      "team": "Blantyre Soccer Academy 2011 Yellow",
-      "p": 3,
-      "w": 2,
-      "d": 0,
-      "l": 1,
-      "pts": 6
-     },
-     {
-      "pos": 3,
-      "team": "Albion Rovers Community Club Yellow (2011)",
-      "p": 3,
-      "w": 2,
-      "d": 0,
-      "l": 1,
-      "pts": 6
-     },
-     {
-      "pos": 4,
-      "team": "Royal Albert FC (2011)",
-      "p": 2,
-      "w": 2,
-      "d": 0,
-      "l": 0,
-      "pts": 6
-     },
-     {
       "pos": 5,
-      "team": "Symington Tinto (2011)",
+      "team": "Motherwell Phoenix FC (2011)",
       "p": 3,
       "w": 2,
       "d": 0,
@@ -212,7 +212,7 @@
      },
      {
       "pos": 6,
-      "team": "Greengairs 2011 Phoenix",
+      "team": "Symington Tinto (2011)",
       "p": 4,
       "w": 2,
       "d": 0,
@@ -221,47 +221,47 @@
      },
      {
       "pos": 7,
-      "team": "Kirkfield United Red (2011)",
-      "p": 3,
-      "w": 1,
-      "d": 1,
-      "l": 1,
-      "pts": 4
+      "team": "Royal Albert FC (2011)",
+      "p": 4,
+      "w": 2,
+      "d": 0,
+      "l": 2,
+      "pts": 6
      },
      {
       "pos": 8,
-      "team": "Motherwell Phoenix FC (2011)",
-      "p": 2,
-      "w": 1,
+      "team": "Eddlewood FC 2011",
+      "p": 5,
+      "w": 2,
       "d": 0,
-      "l": 1,
-      "pts": 3
+      "l": 3,
+      "pts": 6
      },
      {
       "pos": 9,
-      "team": "Eddlewood FC 2011",
-      "p": 3,
+      "team": "Kirkfield United Red (2011)",
+      "p": 4,
       "w": 1,
-      "d": 0,
-      "l": 2,
-      "pts": 3
+      "d": 2,
+      "l": 1,
+      "pts": 5
      },
      {
       "pos": 10,
       "team": "Blantyre Celtic CFC Yellows",
-      "p": 2,
-      "w": 0,
+      "p": 3,
+      "w": 1,
       "d": 0,
       "l": 2,
-      "pts": 0
+      "pts": 3
      },
      {
       "pos": 11,
       "team": "Kildrum United (2011)",
-      "p": 3,
+      "p": 5,
       "w": 0,
       "d": 0,
-      "l": 3,
+      "l": 5,
       "pts": 0
      }
     ],
@@ -437,6 +437,15 @@
      {
       "pos": 1,
       "team": "Wishaw Wycombe Wanderers (2013)",
+      "p": 5,
+      "w": 5,
+      "d": 0,
+      "l": 0,
+      "pts": 15
+     },
+     {
+      "pos": 2,
+      "team": "Larkhall Thistle Community FC (2013)",
       "p": 4,
       "w": 4,
       "d": 0,
@@ -444,35 +453,17 @@
       "pts": 12
      },
      {
-      "pos": 2,
+      "pos": 3,
       "team": "Bellshill Athletic FC Blacks (2013)",
-      "p": 5,
-      "w": 2,
+      "p": 6,
+      "w": 3,
       "d": 1,
       "l": 2,
-      "pts": 7
-     },
-     {
-      "pos": 3,
-      "team": "Chryston FC 13",
-      "p": 2,
-      "w": 2,
-      "d": 0,
-      "l": 0,
-      "pts": 6
+      "pts": 10
      },
      {
       "pos": 4,
-      "team": "Larkhall Thistle Community FC (2013)",
-      "p": 2,
-      "w": 2,
-      "d": 0,
-      "l": 0,
-      "pts": 6
-     },
-     {
-      "pos": 5,
-      "team": "Gairdoch United Football Club (2013)",
+      "team": "Chryston FC 13",
       "p": 3,
       "w": 2,
       "d": 0,
@@ -480,25 +471,25 @@
       "pts": 6
      },
      {
+      "pos": 5,
+      "team": "Gairdoch United Football Club (2013)",
+      "p": 4,
+      "w": 2,
+      "d": 0,
+      "l": 2,
+      "pts": 6
+     },
+     {
       "pos": 6,
       "team": "Moorlands F C (2013)",
-      "p": 5,
+      "p": 7,
       "w": 1,
       "d": 1,
-      "l": 3,
+      "l": 5,
       "pts": 4
      },
      {
       "pos": 7,
-      "team": "EKRR 2013",
-      "p": 2,
-      "w": 1,
-      "d": 0,
-      "l": 1,
-      "pts": 3
-     },
-     {
-      "pos": 8,
       "team": "Motherwell FC Community Trust (2013)",
       "p": 2,
       "w": 1,
@@ -507,16 +498,34 @@
       "pts": 3
      },
      {
+      "pos": 8,
+      "team": "Motherwell Phoenix FC White (2013)",
+      "p": 3,
+      "w": 1,
+      "d": 0,
+      "l": 2,
+      "pts": 3
+     },
+     {
       "pos": 9,
-      "team": "Eddlewood FC (2013)",
-      "p": 2,
-      "w": 0,
-      "d": 1,
-      "l": 1,
-      "pts": 1
+      "team": "W Academy Bills 2013",
+      "p": 3,
+      "w": 1,
+      "d": 0,
+      "l": 2,
+      "pts": 3
      },
      {
       "pos": 10,
+      "team": "EKRR 2013",
+      "p": 3,
+      "w": 1,
+      "d": 0,
+      "l": 2,
+      "pts": 3
+     },
+     {
+      "pos": 11,
       "team": "Claremont AFC 2013 Blue",
       "p": 3,
       "w": 0,
@@ -525,22 +534,13 @@
       "pts": 1
      },
      {
-      "pos": 11,
-      "team": "Motherwell Phoenix FC White (2013)",
-      "p": 2,
-      "w": 0,
-      "d": 0,
-      "l": 2,
-      "pts": 0
-     },
-     {
       "pos": 12,
-      "team": "W Academy Bills 2013",
-      "p": 2,
+      "team": "Eddlewood FC (2013)",
+      "p": 3,
       "w": 0,
-      "d": 0,
+      "d": 1,
       "l": 2,
-      "pts": 0
+      "pts": 1
      }
     ],
     "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1200",
@@ -608,7 +608,34 @@
     "rows": [
      {
       "pos": 1,
-      "team": "Scotland Boys Club (2013 Black)",
+      "team": "East Kilbride FC (2013)",
+      "p": 4,
+      "w": 4,
+      "d": 0,
+      "l": 0,
+      "pts": 12
+     },
+     {
+      "pos": 2,
+      "team": "Lochar Thistle 2013",
+      "p": 4,
+      "w": 3,
+      "d": 0,
+      "l": 1,
+      "pts": 9
+     },
+     {
+      "pos": 3,
+      "team": "Hamilton YFC 2013 Navy",
+      "p": 4,
+      "w": 2,
+      "d": 2,
+      "l": 0,
+      "pts": 8
+     },
+     {
+      "pos": 4,
+      "team": "Burnbank FC (2013)",
       "p": 5,
       "w": 2,
       "d": 1,
@@ -616,94 +643,67 @@
       "pts": 7
      },
      {
-      "pos": 2,
-      "team": "Lochar Thistle 2013",
-      "p": 2,
-      "w": 2,
-      "d": 0,
-      "l": 0,
-      "pts": 6
-     },
-     {
-      "pos": 3,
-      "team": "East Kilbride FC (2013)",
-      "p": 2,
-      "w": 2,
-      "d": 0,
-      "l": 0,
-      "pts": 6
-     },
-     {
-      "pos": 4,
-      "team": "Upper Annandale FC 2013s",
-      "p": 3,
-      "w": 1,
-      "d": 2,
-      "l": 0,
-      "pts": 5
-     },
-     {
       "pos": 5,
-      "team": "Burnbank FC (2013)",
-      "p": 3,
-      "w": 1,
+      "team": "Scotland Boys Club (2013 Black)",
+      "p": 6,
+      "w": 2,
       "d": 1,
-      "l": 1,
-      "pts": 4
+      "l": 3,
+      "pts": 7
      },
      {
       "pos": 6,
-      "team": "Hamilton YFC 2013 Navy",
-      "p": 2,
-      "w": 1,
-      "d": 1,
-      "l": 0,
-      "pts": 4
+      "team": "Eddlewood FC reds (2013)",
+      "p": 4,
+      "w": 2,
+      "d": 0,
+      "l": 2,
+      "pts": 6
      },
      {
       "pos": 7,
-      "team": "Blantyre Victoria FC (2013) Blue",
-      "p": 3,
+      "team": "Upper Annandale FC 2013s",
+      "p": 4,
       "w": 1,
-      "d": 1,
+      "d": 2,
       "l": 1,
-      "pts": 4
+      "pts": 5
      },
      {
       "pos": 8,
-      "team": "Eddlewood FC reds (2013)",
-      "p": 2,
+      "team": "Blantyre Victoria FC (2013) Blue",
+      "p": 4,
       "w": 1,
-      "d": 0,
+      "d": 2,
       "l": 1,
-      "pts": 3
+      "pts": 5
      },
      {
       "pos": 9,
       "team": "Blantyre Victoria Y F C Black 2013",
-      "p": 3,
+      "p": 4,
       "w": 1,
       "d": 0,
-      "l": 2,
+      "l": 3,
       "pts": 3
      },
      {
       "pos": 10,
       "team": "Clyde FC Community (Cambuslang) (2013s) White",
-      "p": 3,
+      "p": 4,
       "w": 0,
-      "d": 1,
+      "d": 2,
       "l": 2,
-      "pts": 1
+      "pts": 2
      },
      {
       "pos": 11,
       "team": "Royal Albert FC (2013)",
-      "p": 4,
+      "p": 5,
       "w": 0,
-      "d": 1,
+      "d": 2,
       "l": 3,
-      "pts": 1
+      "pts": 2
      }
     ],
     "url": "https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1201",
@@ -810,13 +810,9 @@
    "scores_published": false
   }
  },
- "checked_at": "2026-11-23T10:30:08+00:00",
- "updated_at": "2026-11-23T10:30:08+00:00",
+ "checked_at": "2026-11-27T07:38:38+00:00",
+ "updated_at": "2026-11-27T07:38:38+00:00",
  "warnings": [
-  "2010: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1189",
-  "2011: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1192",
-  "2012: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1194",
-  "2013: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1200",
-  "2013-reds: CLYFA table not updated, keeping last good copy: could not fetch https://www.clyfa.teamexpert.co.uk/leaguetablefeed/1201"
+  "2012: CLYFA table not updated, keeping last good copy: team not found in any CLYFA table"
  ]
 }
